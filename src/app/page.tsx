@@ -1,5 +1,6 @@
 import Banner from "@/component/home/Banner2";
 import Banners from "@/component/home/Banner3";
+import Banner4 from "@/component/home/Banner4";
 import DealsSection from "@/component/home/DealsSection";
 import FeaturedSection from "@/component/home/FeaturedSection ";
 import BlogAndOffers from "@/component/home/FromBlog";
@@ -20,7 +21,8 @@ export default function Home() {
       {/* <PopularCategories /> */}
       <Banners />
       <DealsSection />
-      <BlogAndOffers />
+      {/* <BlogAndOffers /> */}
+      <Banner4 />
     </>
   );
 }

@@ -59,7 +59,7 @@ function FromBlog() {
                       Save 20% on <br />
                       Women's socks
                     </h4>
-                    <Link href="shop-grid-right.html">
+                    <Link href="shop-grid-right">
                       Shop Now <i className="fi-rs-arrow-right"></i>
                     </Link>
                   </div>
@@ -72,7 +72,7 @@ function FromBlog() {
                       Save 20% on <br />
                       Eardrop
                     </h4>
-                    <Link href="shop-grid-right.html">
+                    <Link href="shop-grid-right">
                       Shop Now <i className="fi-rs-arrow-right"></i>
                     </Link>
                   </div>

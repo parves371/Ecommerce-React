@@ -52,6 +52,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 alt={productName}
                 width={400}
                 height={400}
+                priority
               />
               <Image
                 className="hover-img"
