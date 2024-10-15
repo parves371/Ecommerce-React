@@ -1,3 +1,4 @@
+import Banner from "@/component/home/Banner2";
 import FeaturedSection from "@/component/home/FeaturedSection ";
 import ProductTabs from "@/component/home/ProductTabs";
 import Header from "@/component/layout/Header";
@@ -13,6 +14,7 @@ export default function Home() {
       {/* <HomeSlider /> */}
       <FeaturedSection />
       <ProductTabs />
+      <Banner />
     </>
   );
 }
