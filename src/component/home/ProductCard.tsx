@@ -1,10 +1,9 @@
 import {
   faEye,
   faHeart,
-  faShoppingBag,
   faShuffle,
   faStar,
-  faStarHalfAlt,
+  faStarHalfAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -157,9 +156,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 justifyContent: "center",
               }}
             >
-              <i className="fi-rs-shopping-bag-add">
-                <FontAwesomeIcon icon={faShoppingBag} />
-              </i>
+              <i className="fi-rs-shopping-bag-add"></i>
             </Link>
           </div>
         </div>

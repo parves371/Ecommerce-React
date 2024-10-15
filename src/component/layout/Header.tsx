@@ -1,44 +1,17 @@
-// src/component/layout/Header.tsx
-"use client"; // Needed for Next.js App Router
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faCodePullRequest,
-  faDesktop,
-  faDiamond,
-  faGlobe,
-  faHeadset,
-  faHome,
-  faKitMedical,
-  faMobileAlt,
-  faShoePrints,
-  faThLarge,
-  faTshirt,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkerAlt";
+import Link from "next/link";
 
-import flagFr from "@/imgs/theme/flag-fr.png";
-import flagDt from "@/imgs/theme/flag-dt.png";
-import flagRu from "@/imgs/theme/flag-ru.png";
-import logo from "@/imgs/theme/logo.svg";
-import heart from "@/imgs/theme/icons/icon-heart.svg";
-import cart from "@/imgs/theme/icons/icon-cart.svg";
 import menuBanner from "@/imgs/banner/menu-banner.jpg";
-import thumbnail3 from "@/imgs/shop/thumbnail-3.jpg";
 import thumbnail2 from "@/imgs/shop/thumbnail-2.jpg";
+import thumbnail3 from "@/imgs/shop/thumbnail-3.jpg";
+import flagDt from "@/imgs/theme/flag-dt.png";
+import flagFr from "@/imgs/theme/flag-fr.png";
+import flagRu from "@/imgs/theme/flag-ru.png";
+import cart from "@/imgs/theme/icons/icon-cart.svg";
+import heart from "@/imgs/theme/icons/icon-heart.svg";
+import logo from "@/imgs/theme/logo.svg";
 
 const Header = () => {
-  useEffect(() => {
-    // Dynamically import Bootstrap's JS only on the client side
-    if (typeof window !== "undefined") {
-      require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }
-  }, []);
-
   return (
     <header className="header-area header-style-1 header-height-2">
       <div className="header-top header-top-ptb-1 d-none d-lg-block">
@@ -48,16 +21,12 @@ const Header = () => {
               <div className="header-info">
                 <ul>
                   <li>
-                    <i className="fi-rs-smartphone">
-                      <FontAwesomeIcon icon={faMobileAlt} />
-                    </i>
+                    <i className="fi-rs-smartphone"></i>
 
                     <Link href="#">(+01) - 2345 - 6789</Link>
                   </li>
                   <li>
-                    <i className="fi-rs-marker">
-                      <FontAwesomeIcon icon={faMapMarkerAlt} />
-                    </i>
+                    <i className="fi-rs-marker"></i>
                     <Link href="/page-contact">Our location</Link>
                   </li>
                 </ul>
@@ -85,12 +54,8 @@ const Header = () => {
                 <ul>
                   <li>
                     <a className="language-dropdown-active" href="#">
-                      <i className="fi-rs-world">
-                        <FontAwesomeIcon icon={faGlobe} /> English
-                      </i>{" "}
-                      <i className="fi-rs-angle-small-down">
-                        <FontAwesomeIcon icon={faAngleDown} />
-                      </i>
+                      <i className="fi-rs-world"></i> English
+                      <i className="fi-rs-angle-small-down"></i>
                     </a>
                     <ul className="language-dropdown">
                       <li>
@@ -130,9 +95,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li>
-                    <i className="fi-rs-user">
-                      <FontAwesomeIcon icon={faUser} />
-                    </i>
+                    <i className="fi-rs-user"></i>
                     <Link href="/page-login-register">Log In / Sign Up</Link>
                   </li>
                 </ul>
@@ -155,8 +118,8 @@ const Header = () => {
                 <form action="#">
                   <select className="select-active">
                     <option>All Categories</option>
-                    <option>Women's</option>
-                    <option>Men's</option>
+                    <option>Womens</option>
+                    <option>Mens</option>
                     <option>Cellphones</option>
                     <option>Computer</option>
                     <option>Electronics</option>
@@ -277,17 +240,12 @@ const Header = () => {
             <div className="header-nav d-none d-lg-flex">
               <div className="main-categori-wrap d-none d-lg-block">
                 <Link className="categori-button-active" href="#">
-                  <span className="fi-rs-apps">
-                    <FontAwesomeIcon icon={faThLarge} />
-                  </span>{" "}
-                  Browse Categories
+                  <span className="fi-rs-apps"></span> Browse Categories
                 </Link>
                 <div className="categori-dropdown-wrap categori-dropdown-active-large">
                   <ul>
                     <li className="has-children">
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faTshirt} /> Women's Clothing
-                      </Link>
+                      <Link href="/shop-grid-right">Women's Clothing</Link>
                       <div className="dropdown-menu">
                         <ul className="mega-menu d-lg-flex">
                           <li className="mega-menu-col col-lg-7">
@@ -393,9 +351,7 @@ const Header = () => {
                     </li>
 
                     <li className="has-children">
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faTshirt} /> Men's Clothing
-                      </Link>
+                      <Link href="/shop-grid-right">Men's Clothing</Link>
                       <div className="dropdown-menu">
                         <ul className="mega-menu d-lg-flex">
                           <li className="mega-menu-col col-lg-7">
@@ -485,9 +441,7 @@ const Header = () => {
                     </li>
 
                     <li className="has-children">
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faMobileAlt} /> Cellphones
-                      </Link>
+                      <Link href="/shop-grid-right">Cellphones</Link>
                       <div className="dropdown-menu">
                         <ul className="mega-menu d-lg-flex">
                           <li className="mega-menu-col col-lg-7">
@@ -595,37 +549,23 @@ const Header = () => {
                     </li>
 
                     <li>
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faDesktop} /> Computer & Office
-                      </Link>
+                      <Link href="/shop-grid-right">Computer & Office</Link>
                     </li>
                     <li>
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faCodePullRequest} /> Consumer
-                        Electronics
-                      </Link>
+                      <Link href="/shop-grid-right">Consumer Electronics</Link>
                     </li>
                     <li>
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faDiamond} /> Jewelry &
-                        Accessories
-                      </Link>
+                      <Link href="/shop-grid-right">Jewelry & Accessories</Link>
                     </li>
                     <li>
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faHome} /> Home & Garden
-                      </Link>
+                      <Link href="/shop-grid-right">Home & Garden</Link>
                     </li>
                     <li>
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faShoePrints} /> Shoes
-                      </Link>
+                      <Link href="/shop-grid-right">Shoes</Link>
                     </li>
                     {/* <li><Link href="/shop-grid-right"><FontAwesomeIcon icon={faTeddyBear} /> Mother & Kids</Link></li> */}
                     <li>
-                      <Link href="/shop-grid-right">
-                        <FontAwesomeIcon icon={faKitMedical} /> Outdoor fun
-                      </Link>
+                      <Link href="/shop-grid-right">Outdoor fun</Link>
                     </li>
                   </ul>
                   {/* Dropdown content here */}
@@ -636,10 +576,7 @@ const Header = () => {
                   <ul>
                     <li>
                       <Link className="active" href="/">
-                        Home{" "}
-                        <i className="fi-rs-angle-down">
-                          <FontAwesomeIcon icon={faAngleDown} />
-                        </i>
+                        Home <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
                         <li>
@@ -663,10 +600,7 @@ const Header = () => {
 
                     <li>
                       <Link href="/shop-grid-right">
-                        Shop{" "}
-                        <i className="fi-rs-angle-down">
-                          <FontAwesomeIcon icon={faAngleDown} />
-                        </i>
+                        Shop <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
                         <li>
@@ -734,16 +668,13 @@ const Header = () => {
 
                     <li className="position-static">
                       <Link href="#">
-                        Mega menu{" "}
-                        <i className="fi-rs-angle-down">
-                          <FontAwesomeIcon icon={faAngleDown} />
-                        </i>
+                        Mega menu <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="mega-menu">
                         {/* Women's Fashion */}
                         <li className="sub-mega-menu sub-mega-menu-width-22">
                           <Link className="menu-title" href="#">
-                            Women's Fashion
+                            Womens Fashion
                           </Link>
                           <ul>
                             <li>
@@ -780,7 +711,7 @@ const Header = () => {
                         {/* Men's Fashion */}
                         <li className="sub-mega-menu sub-mega-menu-width-22">
                           <Link className="menu-title" href="#">
-                            Men's Fashion
+                            Mens Fashion
                           </Link>
                           <ul>
                             <li>
@@ -858,7 +789,7 @@ const Header = () => {
                             <div className="menu-banner-content">
                               <h4>Hot deals</h4>
                               <h3>
-                                Don't miss
+                                Dont miss
                                 <br />
                                 Trending
                               </h3>
@@ -883,10 +814,7 @@ const Header = () => {
 
                     <li>
                       <Link href="/blog-category-grid">
-                        Blog{" "}
-                        <i className="fi-rs-angle-down">
-                          <FontAwesomeIcon icon={faAngleDown} />
-                        </i>
+                        Blog <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
                         <li>
@@ -932,10 +860,7 @@ const Header = () => {
 
                     <li>
                       <Link href="#">
-                        Pages{" "}
-                        <i className="fi-rs-angle-down">
-                          <FontAwesomeIcon icon={faAngleDown} />
-                        </i>
+                        Pages <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
                         <li>
@@ -980,10 +905,7 @@ const Header = () => {
             </div>
             <div className="hotline d-none d-lg-block">
               <p>
-                <i className="fi-rs-headset">
-                  {" "}
-                  <FontAwesomeIcon icon={faHeadset} />
-                </i>
+                <i className="fi-rs-headset"> </i>
                 <span>Hotline</span> 1900 - 888
               </p>
             </div>
