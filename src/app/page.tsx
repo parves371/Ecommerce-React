@@ -1,6 +1,8 @@
 import Banner from "@/component/home/Banner2";
 import Banners from "@/component/home/Banner3";
+import DealsSection from "@/component/home/DealsSection";
 import FeaturedSection from "@/component/home/FeaturedSection ";
+import BlogAndOffers from "@/component/home/FromBlog";
 import ProductTabs from "@/component/home/ProductTabs";
 import Header from "@/component/layout/Header";
 import MobileHeader from "@/component/layout/MobileHeader";
@@ -17,6 +19,8 @@ export default function Home() {
       <Banner />
       {/* <PopularCategories /> */}
       <Banners />
+      <DealsSection />
+      <BlogAndOffers />
     </>
   );
 }
