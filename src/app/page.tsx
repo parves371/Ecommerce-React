@@ -6,6 +6,7 @@ import DealsSection from "@/component/home/DealsSection";
 import FeaturedSection from "@/component/home/FeaturedSection ";
 import BlogAndOffers from "@/component/home/FromBlog";
 import ProductTabs from "@/component/home/ProductTabs";
+import Footer from "@/component/layout/Footer";
 import Header from "@/component/layout/Header";
 import MobileHeader from "@/component/layout/MobileHeader";
 
@@ -25,6 +26,7 @@ export default function Home() {
       {/* <BlogAndOffers /> */}
       <Banner4 />
       <ArticleBanner5 />
+      <Footer />
     </>
   );
 }
