@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 const LoginRegister: React.FC = () => {
@@ -33,9 +34,9 @@ const LoginRegister: React.FC = () => {
       <div className="page-header breadcrumb-wrap">
         <div className="container">
           <div className="breadcrumb">
-            <a href="/" rel="nofollow">
+            <Link href="/" rel="nofollow">
               Home
-            </a>
+            </Link>
             <span></span> Pages
             <span></span> Login / Register
           </div>
@@ -108,9 +109,9 @@ const LoginRegister: React.FC = () => {
                               </label>
                             </div>
                           </div>
-                          <a className="text-muted" href="#">
+                          <Link className="text-muted" href="#">
                             Forgot password?
-                          </a>
+                          </Link>
                         </div>
                         <div className="form-group">
                           <button
@@ -225,10 +226,10 @@ const LoginRegister: React.FC = () => {
                               </label>
                             </div>
                           </div>
-                          <a href="page-privacy-policy.html">
+                          <Link href="page-privacy-policy.html">
                             <i className="fi-rs-book-alt mr-5 text-muted"></i>
                             Lean more
-                          </a>
+                          </Link>
                         </div>
                         <div className="form-group">
                           <button
@@ -245,26 +246,26 @@ const LoginRegister: React.FC = () => {
                       </div>
                       <ul className="btn-login list_none text-center mb-15">
                         <li>
-                          <a
+                          <Link
                             href="#"
                             className="btn btn-facebook hover-up mb-lg-0 mb-sm-4"
                           >
                             Login With Facebook
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="#" className="btn btn-google hover-up">
+                          <Link href="#" className="btn btn-google hover-up">
                             Login With Google
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="text-muted text-center">
-                        Already have an account? <a href="#">Sign in now</a>
+                        Already have an account?{" "}
+                        <Link href="#">Sign in now</Link>
                       </div>
                     </div>
                   </div>
                 </div>
-                {/* End of Register Form */}
               </div>
             </div>
           </div>

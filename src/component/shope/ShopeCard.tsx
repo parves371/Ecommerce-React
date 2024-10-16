@@ -1,39 +1,30 @@
-import {
-  faEye,
-  faHeart,
-  faShuffle,
-  faStar,
-  faStarHalfAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import "tailwindcss/tailwind.css"; // Import directly in JavaScript entry point
+
+// Define the props for the ProductCard component
 interface ProductCardProps {
-  imgSrcDefault: string;
-  imgSrcHover: string;
-  productLink: string;
-  categoryLink: string;
-  category: string;
   productName: string;
-  price: string;
-  oldPrice?: string;
-  badgeText?: string;
-  rating?: number; // Rating as a percentage, e.g., 90 for 90%
+  productCategory: string;
+  productPrice: number;
+  oldPrice?: number;
+  rating: number;
+  badgeText: string;
+  imageUrl: string;
+  hoverImageUrl: string;
 }
 
-const ProductCard: FC<ProductCardProps> = ({
-  imgSrcDefault,
-  imgSrcHover,
-  productLink,
-  categoryLink,
-  category,
+const ShopeCard: FC<ProductCardProps> = ({
   productName,
-  price,
+  productCategory,
+  productPrice,
   oldPrice,
+  rating,
   badgeText,
-  rating = 90, // Default rating of 90%
+  imageUrl,
+  hoverImageUrl,
 }) => {
   // Calculate number of full, half, and empty stars
   const fullStars = Math.floor(rating / 20); // 5-star system, so each star represents 20%
@@ -41,69 +32,66 @@ const ProductCard: FC<ProductCardProps> = ({
   const emptyStars = 5 - fullStars - halfStar;
 
   return (
-    <div className="col-lg-3 col-md-4 col-12 col-sm-6">
+    <div className="col-lg-4 col-md-4 col-12 col-sm-6">
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
-            <Link href={productLink}>
+            <Link href="/shop-product-right" passHref>
               <Image
+                src={imageUrl}
+                alt={`${productName} Image`}
+                width={300}
+                height={300}
                 className="default-img"
-                src={imgSrcDefault}
-                alt={productName}
-                width={400}
-                height={400}
               />
               <Image
+                src={hoverImageUrl}
+                alt={`${productName} Hover Image`}
+                width={300}
+                height={300}
                 className="hover-img"
-                src={imgSrcHover}
-                alt={productName}
-                width={400}
-                height={400}
               />
             </Link>
           </div>
           <div className="product-action-1">
-            <Link
-              href={categoryLink}
+            <a
               aria-label="Quick view"
               className="action-btn hover-up"
               data-bs-toggle="modal"
               data-bs-target="#quickViewModal"
             >
-              <FontAwesomeIcon icon={faEye} />
-            </Link>
-            <Link
-              href="shop-wishlist.html"
+              <i className="fi-rs-search"></i>
+            </a>
+            <a
               aria-label="Add To Wishlist"
               className="action-btn hover-up"
+              href="/shop-wishlist"
             >
-              <FontAwesomeIcon icon={faHeart} />
-            </Link>
-            <Link
-              href="shop-compare.html"
+              <i className="fi-rs-heart"></i>
+            </a>
+            <a
               aria-label="Compare"
               className="action-btn hover-up"
+              href="/shop-compare"
             >
-              <FontAwesomeIcon icon={faShuffle} />
-            </Link>
+              <i className="fi-rs-shuffle"></i>
+            </a>
           </div>
-
-          {badgeText && (
-            <div className="product-badges product-badges-position product-badges-mrg">
-              <span className={badgeText.toLowerCase()}>{badgeText}</span>
-            </div>
-          )}
+          <div className="product-badges product-badges-position product-badges-mrg">
+            <span className={badgeText.toLowerCase()}>{badgeText}</span>
+          </div>
         </div>
-
         <div className="product-content-wrap">
           <div className="product-category">
-            <Link href={categoryLink}>{category}</Link>
+            <Link href="/shop-grid-right" passHref>
+              {productCategory}
+            </Link>
           </div>
           <h2>
-            <Link href={productLink}>{productName}</Link>
+            <Link href="/shop-product-right" passHref>
+              {productName}
+            </Link>
           </h2>
-
-          {/* Rating Section */}
           <div className="flex items-center " title={`${rating}%`}>
             {/* Render full stars */}
             {Array(fullStars)
@@ -140,22 +128,12 @@ const ProductCard: FC<ProductCardProps> = ({
               {rating}%
             </span>
           </div>
-
           <div className="product-price">
-            <span>{price}</span>
-            {oldPrice && <span className="old-price">{oldPrice}</span>}
+            <span>${productPrice} </span>
+            {oldPrice && <span className="old-price">${oldPrice}</span>}
           </div>
-          <div className="product-action-1 show ">
-            <Link
-              aria-label="Add To Cart"
-              className="action-btn hover-up"
-              href="shop-cart"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+          <div className="product-action-1 show">
+            <Link href="/shop-cart" passHref>
               <i className="fi-rs-shopping-bag-add"></i>
             </Link>
           </div>
@@ -165,4 +143,4 @@ const ProductCard: FC<ProductCardProps> = ({
   );
 };
 
-export default ProductCard;
+export default ShopeCard;
