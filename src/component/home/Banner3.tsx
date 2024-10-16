@@ -41,7 +41,13 @@ function Banners() {
               }`}
             >
               <div className="banner-img wow fadeIn animated">
-                <img src={banner.src} alt={banner.alt} />
+                <Image
+                  src={banner.src}
+                  alt={banner.alt}
+                  width={300}
+                  height={300}
+                  layout="responsive"
+                />
                 <div className="banner-text">
                   <span>{banner.subtitle}</span>
                   <h4>{banner.title}</h4>

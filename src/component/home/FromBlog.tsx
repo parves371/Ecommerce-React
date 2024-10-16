@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BlogPost from "./BlogPost";
+import Image from "next/image";
 
 function FromBlog() {
   return (
@@ -35,7 +36,11 @@ function FromBlog() {
             <div className="row">
               <div className="col-md-6">
                 <div className="banner-img banner-1 wow fadeIn animated mb-2">
-                  <img src="/imgs/banner/banner-5.jpg" alt="Autumn Hat" />
+                  <Image
+                    src="/imgs/banner/banner-5.jpg"
+                    alt="Autumn Hat"
+                    layout="responsive"
+                  />
                   <div className="banner-text">
                     <span>Accessories</span>
                     <h4>
@@ -52,7 +57,11 @@ function FromBlog() {
               </div>
               <div className="col-md-6">
                 <div className="banner-img mb-15 wow fadeIn animated">
-                  <img src="/imgs/banner/banner-6.jpg" alt="" />
+                  <Image
+                    src="/imgs/banner/banner-6.jpg"
+                    alt=""
+                    layout="responsive"
+                  />
                   <div className="banner-text">
                     <span>Big Offer</span>
                     <h4>
@@ -65,7 +74,11 @@ function FromBlog() {
                   </div>
                 </div>
                 <div className="banner-img banner-2 wow fadeIn animated">
-                  <img src="/imgs/banner/banner-7.jpg" alt="" />
+                  <Image
+                    src="/imgs/banner/banner-7.jpg"
+                    alt=""
+                    layout="responsive"
+                  />
                   <div className="banner-text">
                     <span>Smart Offer</span>
                     <h4>

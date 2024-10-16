@@ -1,3 +1,4 @@
+import ArticleBanner5 from "@/component/home/ArticleBanner5";
 import Banner from "@/component/home/Banner2";
 import Banners from "@/component/home/Banner3";
 import Banner4 from "@/component/home/Banner4";
@@ -23,6 +24,7 @@ export default function Home() {
       <DealsSection />
       {/* <BlogAndOffers /> */}
       <Banner4 />
+      <ArticleBanner5 />
     </>
   );
 }

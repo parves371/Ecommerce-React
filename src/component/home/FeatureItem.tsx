@@ -15,7 +15,13 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 }) => {
   return (
     <div className="banner-features wow fadeIn animated hover-up">
-      <Image src={imageSrc} alt={altText} width={152} height={105} />
+      <Image
+        src={imageSrc}
+        alt={altText}
+        width={152}
+        height={105}
+        layout="responsive"
+      />
       <h4 className={bgColorClass}>{label}</h4>
     </div>
   );

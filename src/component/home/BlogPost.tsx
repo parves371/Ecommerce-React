@@ -27,7 +27,13 @@ const BlogPost: React.FC<BlogPostProps> = ({
       <div className="d-md-flex d-block">
         <div className="post-thumb d-flex mr-15">
           <Link className="color-white" href={postUrl}>
-            <Image src={imageUrl} alt={title} width={221} height={147} />
+            <Image
+              src={imageUrl}
+              alt={title}
+              width={221}
+              height={147}
+              layout="responsive"
+            />
           </Link>
         </div>
         <div className="post-content">

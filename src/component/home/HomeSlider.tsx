@@ -30,6 +30,7 @@ const HomeSlider = () => {
                     alt="Slider 1"
                     width={800}
                     height={600}
+                    layout="responsive"
                   />
                 </div>
               </div>
@@ -62,6 +63,7 @@ const HomeSlider = () => {
                     alt="Slider 2"
                     width={800}
                     height={600}
+                    layout='responsive'
                   />
                 </div>
               </div>
@@ -92,6 +94,7 @@ const HomeSlider = () => {
                     alt="Slider 3"
                     width={800}
                     height={600}
+                    layout='responsive'
                   />
                 </div>
               </div>

@@ -52,7 +52,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 alt={productName}
                 width={400}
                 height={400}
-                priority
+                layout="responsive"
               />
               <Image
                 className="hover-img"
@@ -60,6 +60,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 alt={productName}
                 width={400}
                 height={400}
+                layout="responsive"
               />
             </Link>
           </div>
