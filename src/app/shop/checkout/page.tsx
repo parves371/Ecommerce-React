@@ -1,4 +1,5 @@
 import CouponAndForm from "@/component/shope/checkout/CouponAndForm";
+import OrderReview from "@/component/shope/checkout/right/OrderReview";
 import Link from "next/link";
 import React from "react";
 
@@ -19,6 +20,7 @@ function page() {
       <section className="mt-50 mb-50">
         <div className="container">
           <CouponAndForm />
+
           <div className="row">
             <div className="col-12">
               <div className="divider mt-50 mb-50"></div>
@@ -26,10 +28,8 @@ function page() {
           </div>
 
           <div className="row">
-          <div className="col-md-6">
-
-            
-          </div>
+            <div className="col-md-6"></div>
+            <OrderReview />
           </div>
         </div>
       </section>
