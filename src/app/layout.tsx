@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./main.css";
+
 import "./globals.css";
+import "./main.css";
 
 
 import { config } from '@fortawesome/fontawesome-svg-core';

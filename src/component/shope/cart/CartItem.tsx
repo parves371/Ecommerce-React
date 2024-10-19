@@ -26,7 +26,14 @@ const CartItem: FC<CartItemProps> = ({
 }) => {
   return (
     <tr>
-      <td className="image product-thumbnail">
+      <td
+        className="image product-thumbnail"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Image src={imageUrl} alt={productName} width={100} height={100} />
       </td>
       <td className="product-des product-name">
