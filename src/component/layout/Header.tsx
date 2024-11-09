@@ -245,7 +245,7 @@ const Header = () => {
                 <div className="categori-dropdown-wrap categori-dropdown-active-large">
                   <ul>
                     <li className="has-children">
-                      <Link href="/shop-grid-right">Women's Clothing</Link>
+                      <Link href="/shop-grid-right">Women&apos;s Clothing</Link>
                       <div className="dropdown-menu">
                         <ul className="mega-menu d-lg-flex">
                           <li className="mega-menu-col col-lg-7">
@@ -267,7 +267,7 @@ const Header = () => {
                                     <Link href="#">Hoodies & Sweatshirts</Link>
                                   </li>
                                   <li>
-                                    <Link href="#">Women's Sets</Link>
+                                    <Link href="#">Women&apos;s Sets</Link>
                                   </li>
                                   <li>
                                     <Link href="#">Suits & Blazers</Link>
@@ -351,7 +351,7 @@ const Header = () => {
                     </li>
 
                     <li className="has-children">
-                      <Link href="/shop-grid-right">Men's Clothing</Link>
+                      <Link href="/shop-grid-right">Men&apos;s Clothing</Link>
                       <div className="dropdown-menu">
                         <ul className="mega-menu d-lg-flex">
                           <li className="mega-menu-col col-lg-7">
@@ -599,30 +599,18 @@ const Header = () => {
                     </li>
 
                     <li>
-                      <Link href="/shop-grid-right">
+                      <Link href="#">
                         Shop <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
                         <li>
-                          <Link href="/shop-grid-right">
-                            Shop Grid – Right Sidebar
-                          </Link>
+                          <Link href="/shop">Shop Grid – Sidebar</Link>
                         </li>
+
                         <li>
-                          <Link href="/shop-grid-left">
-                            Shop Grid – Left Sidebar
-                          </Link>
+                          <Link href="/shop/shop-list">Shop List – Sidebar</Link>
                         </li>
-                        <li>
-                          <Link href="/shop-list-right">
-                            Shop List – Right Sidebar
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/shop-list-left">
-                            Shop List – Left Sidebar
-                          </Link>
-                        </li>
+
                         <li>
                           <Link href="/shop-fullwidth">Shop - Wide</Link>
                         </li>
@@ -652,16 +640,16 @@ const Header = () => {
                           <Link href="/shop-filter">Shop – Filter</Link>
                         </li>
                         <li>
-                          <Link href="/shop-wishlist">Shop – Wishlist</Link>
+                          <Link href="/shop/wishlist">Shop – Wishlist</Link>
                         </li>
                         <li>
-                          <Link href="/shop-cart">Shop – Cart</Link>
+                          <Link href="/shop/cart">Shop – Cart</Link>
                         </li>
                         <li>
-                          <Link href="/shop-checkout">Shop – Checkout</Link>
+                          <Link href="/shop/checkout">Shop – Checkout</Link>
                         </li>
                         <li>
-                          <Link href="/shop-compare">Shop – Compare</Link>
+                          <Link href="/shop/compare">Shop – Compare</Link>
                         </li>
                       </ul>
                     </li>
@@ -910,8 +898,8 @@ const Header = () => {
               </p>
             </div>
             <p className="mobile-promotion">
-              Happy <span className="text-brand">Mother's Day</span>. Big Sale
-              Up to 40%
+              Happy <span className="text-brand">Mother&apos;s Day</span>. Big
+              Sale Up to 40%
             </p>
             <div className="header-action-right d-block d-lg-none">
               <div className="header-action-2">
