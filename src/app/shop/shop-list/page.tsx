@@ -1,6 +1,32 @@
+import FilterComponent from "@/component/shope/shop-list/FilterComponent";
 import ProductCard from "@/component/shope/shop-list/ProductCard";
+import ProductSidebar from "@/component/shope/shop-list/ProductSidebar";
+import Image from "next/image";
 import Link from "next/link";
 
+const sampleProducts = [
+  {
+    id: 1,
+    name: "Chen Cardigan",
+    imageUrl: "/imgs/shop/thumbnail-3.jpg",
+    price: 99.5,
+    rating: 90,
+  },
+  {
+    id: 2,
+    name: "Chen Sweater",
+    imageUrl: "/imgs/shop/thumbnail-4.jpg",
+    price: 89.5,
+    rating: 80,
+  },
+  {
+    id: 3,
+    name: "Colorful Jacket",
+    imageUrl: "/imgs/shop/thumbnail-5.jpg",
+    price: 25.0,
+    rating: 60,
+  },
+];
 const page = () => {
   return (
     <main className="main">
@@ -179,8 +205,56 @@ const page = () => {
                   </li>
                 </ul>
               </div>
+              {/* Fillter By Price */}
+              <div className="sidebar-widget price_range range mb-30">
+                <div className="widget-header position-relative mb-20 pb-10">
+                  <h5 className="widget-title mb-10">Fill by price</h5>
+                  <div className="bt-1 border-color-1"></div>
+                </div>
 
-              
+                <div className="price-filter">
+                  <div className="price-filter-inner">
+                    <div id="slider-range"></div>
+                    <div className="price_slider_amount">
+                      <div className="label-input">
+                        <span>Range:</span>
+                        <input
+                          type="text"
+                          id="amount"
+                          name="price"
+                          placeholder="Add Your Price"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <FilterComponent />
+                <Link href="/shop" className="btn btn-sm btn-default">
+                  <i className="fi-rs-filter mr-5"></i> Fillter
+                </Link>
+              </div>
+              {/* Product sidebar Widget */}
+              <ProductSidebar title="New Products" products={sampleProducts} />
+
+              <div className="banner-img wow fadeIn mb-45 animated d-lg-block d-none">
+                <Image
+                  width={306}
+                  height={350}
+                  src="/imgs/banner/banner-11.jpg"
+                  alt=""
+                />
+                <div className="banner-text">
+                  <span>Women Zone</span>
+                  <h4>
+                    Save 17% on <br />
+                    Office Dress
+                  </h4>
+                  <a href="shop-grid-right.html">
+                    Shop Now <i className="fi-rs-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

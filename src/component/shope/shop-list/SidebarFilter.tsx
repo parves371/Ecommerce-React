@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SidebarFilter: React.FC = () => {
   const [price, setPrice] = useState([0, 100]); // Initial price range [min, max]
@@ -8,22 +8,26 @@ const SidebarFilter: React.FC = () => {
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSelectedColors((prev) =>
-      prev.includes(value) ? prev.filter((color) => color !== value) : [...prev, value]
+      prev.includes(value)
+        ? prev.filter((color) => color !== value)
+        : [...prev, value]
     );
   };
 
   const handleConditionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSelectedConditions((prev) =>
-      prev.includes(value) ? prev.filter((condition) => condition !== value) : [...prev, value]
+      prev.includes(value)
+        ? prev.filter((condition) => condition !== value)
+        : [...prev, value]
     );
   };
-
-  const handlePriceChange = (event: any, newValue: number | number[]) => {
-    if (Array.isArray(newValue)) {
-      setPrice(newValue);
-    }
-  };
+  setPrice([0, 100]);
+  // const handlePriceChange = (event: any, newValue: number | number[]) => {
+  //   if (Array.isArray(newValue)) {
+  //     setPrice(newValue);
+  //   }
+  // };
 
   return (
     <div className="sidebar-widget price_range range mb-30">
@@ -63,7 +67,7 @@ const SidebarFilter: React.FC = () => {
               id="exampleCheckbox1"
               value="Red"
               onChange={handleColorChange}
-              checked={selectedColors.includes('Red')}
+              checked={selectedColors.includes("Red")}
             />
             <label className="form-check-label" htmlFor="exampleCheckbox1">
               <span>Red (56)</span>
@@ -75,7 +79,7 @@ const SidebarFilter: React.FC = () => {
               id="exampleCheckbox2"
               value="Green"
               onChange={handleColorChange}
-              checked={selectedColors.includes('Green')}
+              checked={selectedColors.includes("Green")}
             />
             <label className="form-check-label" htmlFor="exampleCheckbox2">
               <span>Green (78)</span>
@@ -87,7 +91,7 @@ const SidebarFilter: React.FC = () => {
               id="exampleCheckbox3"
               value="Blue"
               onChange={handleColorChange}
-              checked={selectedColors.includes('Blue')}
+              checked={selectedColors.includes("Blue")}
             />
             <label className="form-check-label" htmlFor="exampleCheckbox3">
               <span>Blue (54)</span>
@@ -103,7 +107,7 @@ const SidebarFilter: React.FC = () => {
               id="exampleCheckbox11"
               value="New"
               onChange={handleConditionChange}
-              checked={selectedConditions.includes('New')}
+              checked={selectedConditions.includes("New")}
             />
             <label className="form-check-label" htmlFor="exampleCheckbox11">
               <span>New (1506)</span>
@@ -115,7 +119,7 @@ const SidebarFilter: React.FC = () => {
               id="exampleCheckbox21"
               value="Refurbished"
               onChange={handleConditionChange}
-              checked={selectedConditions.includes('Refurbished')}
+              checked={selectedConditions.includes("Refurbished")}
             />
             <label className="form-check-label" htmlFor="exampleCheckbox21">
               <span>Refurbished (27)</span>
@@ -127,7 +131,7 @@ const SidebarFilter: React.FC = () => {
               id="exampleCheckbox31"
               value="Used"
               onChange={handleConditionChange}
-              checked={selectedConditions.includes('Used')}
+              checked={selectedConditions.includes("Used")}
             />
             <label className="form-check-label" htmlFor="exampleCheckbox31">
               <span>Used (45)</span>
