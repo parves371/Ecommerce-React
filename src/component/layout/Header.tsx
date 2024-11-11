@@ -878,10 +878,10 @@ const Header = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/page-terms">Terms of Service</Link>
+                          <Link href="/pages/page-terms">Terms of Service</Link>
                         </li>
                         <li>
-                          <Link href="/page-404">404 Page</Link>
+                          <Link href="/pages/page-404">404 Page</Link>
                         </li>
                       </ul>
                     </li>
