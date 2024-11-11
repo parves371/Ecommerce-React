@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import "./main.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 import { config } from '@fortawesome/fontawesome-svg-core';

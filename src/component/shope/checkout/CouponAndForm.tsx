@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import { useState } from "react";
 import LoginForm from "./LoginForm";
 import CouponForm from "./CouponForm";
-
 
 const CouponAndForm = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState<boolean>(false);
@@ -10,12 +9,10 @@ const CouponAndForm = () => {
 
   const toggleLoginForm = () => {
     setIsLoginFormOpen(!isLoginFormOpen);
-    if (isCouponFormOpen) setIsCouponFormOpen(false); // Close coupon form if open
   };
 
   const toggleCouponForm = () => {
     setIsCouponFormOpen(!isCouponFormOpen);
-    if (isLoginFormOpen) setIsLoginFormOpen(false); // Close login form if open
   };
 
   return (
