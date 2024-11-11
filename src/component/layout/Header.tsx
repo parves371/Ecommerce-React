@@ -854,16 +854,16 @@ const Header = () => {
                       </Link>
                       <ul className="sub-menu">
                         <li>
-                          <Link href="/page-about">About Us</Link>
+                          <Link href="/pages/about-page">About Us</Link>
                         </li>
                         <li>
-                          <Link href="/page-contact">Contact</Link>
+                          <Link href="/pages/page-contact">Contact</Link>
                         </li>
                         <li>
-                          <Link href="/page-account">My Account</Link>
+                          <Link href="/pages/account">My Account</Link>
                         </li>
                         <li>
-                          <Link href="/page-login-register">
+                          <Link href="/pages/login-register">
                             Login/Register
                           </Link>
                         </li>
