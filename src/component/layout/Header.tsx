@@ -608,11 +608,13 @@ const Header = () => {
                         </li>
 
                         <li>
-                          <Link href="/shop/shop-list">Shop List – Sidebar</Link>
+                          <Link href="/shop/shop-list">
+                            Shop List – Sidebar
+                          </Link>
                         </li>
 
                         <li>
-                          <Link href="/shop-fullwidth">Shop - Wide</Link>
+                          <Link href="/shop/shop-fullwidth">Shop - Wide</Link>
                         </li>
                         <li>
                           <Link href="#">
