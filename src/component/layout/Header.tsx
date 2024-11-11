@@ -868,12 +868,12 @@ const Header = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/page-purchase-guide">
+                          <Link href="/pages/purchase-guide">
                             Purchase Guide
                           </Link>
                         </li>
                         <li>
-                          <Link href="/page-privacy-policy">
+                          <Link href="/pages/privacy-policy">
                             Privacy Policy
                           </Link>
                         </li>

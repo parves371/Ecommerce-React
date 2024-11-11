@@ -115,7 +115,14 @@ const page = () => {
                   {/* Widget categories */}
                   <div className="sidebar-widget widget_categories mb-40">
                     <div className="widget-header position-relative mb-20 pb-10">
-                      <h5 className="widget-title">Categories</h5>
+                      <h5
+                        className="widget-title"
+                        style={{
+                          marginTop: "40px",
+                        }}
+                      >
+                        Categories
+                      </h5>
                     </div>
                     <div className="post-block-list post-module-1 post-module-5">
                       <ul>
