@@ -23,7 +23,6 @@ export default function Home() {
       <PopularCategories />
       <Banners />
       <DealsSection />
-      {/* <BlogAndOffers /> */}
       <Banner4 />
       <ArticleBanner5 />
       <Footer />
