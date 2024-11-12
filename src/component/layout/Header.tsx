@@ -595,7 +595,7 @@ const Header = () => {
                     </li>
 
                     <li>
-                      <Link href="/about-page">About</Link>
+                      <Link href="/pages/about-page">About</Link>
                     </li>
 
                     <li>

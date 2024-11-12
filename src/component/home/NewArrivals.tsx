@@ -28,7 +28,7 @@ function PopularCategories() {
     slidesToShow: 6,
     slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     dots: true,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3 } },
