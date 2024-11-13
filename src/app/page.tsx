@@ -4,7 +4,6 @@ import Banners from "@/component/home/Banner3";
 import Banner4 from "@/component/home/Banner4";
 import DealsSection from "@/component/home/DealsSection";
 import FeaturedSection from "@/component/home/FeaturedSection ";
-import NewArrivals from "@/component/home/NewArrivals";
 import PopularCategories from "@/component/home/PopularCategories";
 import ProductTabs from "@/component/home/ProductTabs";
 import Footer from "@/component/layout/Footer";
