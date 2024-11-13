@@ -61,9 +61,9 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
     console.log("Looking for product with ID:", params.id);
     console.log("Available products:", singleProduct);
 
-    const productData = singleProduct.find(
-      (item) => item.id === params.id
-    ) as Product | undefined;
+    const productData = singleProduct.find((item) => item.id === params.id) as
+      | Product
+      | undefined;
 
     if (productData) {
       setProduct(productData);

@@ -1,6 +1,7 @@
 // components/ReviewsTab.tsx
 import React from "react";
 import StarRating from "./StarRating";
+import ReviewForm from "./ReviewForm";
 
 const ReviewsTab: React.FC = () => {
   const ratings = {
@@ -36,15 +37,7 @@ const ReviewsTab: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="comment-form">
-        <h4 className="mb-15">Add a review</h4>
-        <form className="form-contact comment_form" action="#" id="commentForm">
-          <textarea className="form-control w-100" name="comment" cols={30} rows={9} placeholder="Write Comment"></textarea>
-          <input className="form-control" name="name" type="text" placeholder="Name" />
-          <input className="form-control" name="email" type="email" placeholder="Email" />
-          <button type="submit" className="button button-contactForm">Submit Review</button>
-        </form>
-      </div>
+      <ReviewForm />
     </div>
   );
 };
