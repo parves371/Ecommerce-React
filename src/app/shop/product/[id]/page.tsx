@@ -34,8 +34,8 @@ interface Params {
 
 // Main images and thumbnails for the ImageGallery component
 const mainImages = [
-  "/imgs/shop/product-16-2.jpg",
   "/imgs/shop/product-16-1.jpg",
+  "/imgs/shop/product-16-2.jpg",
   "/imgs/shop/product-16-3.jpg",
   "/imgs/shop/product-16-4.jpg",
   "/imgs/shop/product-16-5.jpg",
@@ -98,6 +98,7 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
                   </div>
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <ProductDetail
+                      id={product.id}
                       title={product.title}
                       brand={product.brand}
                       rating={product.rating}

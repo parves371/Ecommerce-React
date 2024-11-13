@@ -1,8 +1,10 @@
 // components/ProductDetail.tsx
 import Link from "next/link";
 import React, { useState } from "react";
+import { addToCart } from "../../../../actions/add-to-cart";
 
 interface ProductDetailProps {
+  id: number;
   title: string;
   brand: string;
   rating: number;
@@ -22,6 +24,7 @@ interface ProductDetailProps {
 }
 
 const ProductDetail: React.FC<ProductDetailProps> = ({
+  id,
   title,
   brand,
   rating,
@@ -49,6 +52,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     );
   };
 
+  const handleAddToCart = () => {
+    // Implement your add to cart logic here
+    addToCart(id);
+  };
   return (
     <div className="detail-info">
       <h2 className="title-detail">{title}</h2>
@@ -107,48 +114,47 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       </div>
 
       <div className="attr-detail attr-color mb-4">
-      <strong className="mr-3">Color</strong>
-      <ul className="flex space-x-2">
-        {colors.map((color) => (
-          <li key={color} className="relative">
-            <button
-              onClick={() => setSelectedColor(color)}
-              className={`w-6 h-6 rounded-full border-1 focus:outline-none ${
-                selectedColor === color ? "border-black" : "border-black"
-              }`}
-              style={{
-                backgroundColor: color,
-              }}
-              aria-label={`Select color ${color}`}
-            ></button>
-            {selectedColor === color && (
-              <span className="absolute top-0 right-0 transform -translate-x-1/4 -translate-y-1/4 w-2 h-2 bg-green-500 rounded-full border border-white"></span>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <strong className="mr-3">Color</strong>
+        <ul className="flex space-x-2">
+          {colors.map((color) => (
+            <li key={color} className="relative">
+              <button
+                onClick={() => setSelectedColor(color)}
+                className={`w-6 h-6 rounded-full border-1 focus:outline-none ${
+                  selectedColor === color ? "border-black" : "border-black"
+                }`}
+                style={{
+                  backgroundColor: color,
+                }}
+                aria-label={`Select color ${color}`}
+              ></button>
+              {selectedColor === color && (
+                <span className="absolute top-0 right-0 transform -translate-x-1/4 -translate-y-1/4 w-2 h-2 bg-green-500 rounded-full border border-white"></span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
 
-    <div className="attr-detail attr-size">
-      <strong className="mr-3">Size</strong>
-      <ul className="flex space-x-2">
-        {sizes.map((size) => (
-          <li key={size}>
-            <button
-              onClick={() => setSelectedSize(size)}
-              className={`px-3 py-1 rounded border focus:outline-none ${
-                selectedSize === size
-                  ? "bg-[#088178] text-white"
-                  : "bg-white text-gray-800 border-gray-300"
-              }`}
-            >
-              {size}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-
+      <div className="attr-detail attr-size">
+        <strong className="mr-3">Size</strong>
+        <ul className="flex space-x-2">
+          {sizes.map((size) => (
+            <li key={size}>
+              <button
+                onClick={() => setSelectedSize(size)}
+                className={`px-3 py-1 rounded border focus:outline-none ${
+                  selectedSize === size
+                    ? "bg-[#088178] text-white"
+                    : "bg-white text-gray-800 border-gray-300"
+                }`}
+              >
+                {size}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="bt-1 border-color-1 mt-30 mb-30"></div>
       <div className="detail-extralink">
@@ -170,7 +176,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           </Link>
         </div>
         <div className="product-extra-link2">
-          <button type="button" className="button button-add-to-cart">
+          <button
+            type="button"
+            className="button button-add-to-cart"
+            onClick={() => handleAddToCart()}
+          >
             Add to cart
           </button>
           <Link

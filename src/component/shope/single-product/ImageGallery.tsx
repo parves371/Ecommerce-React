@@ -37,6 +37,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
           src={selectedImage}
           alt="Selected product image"
           className={styles.mainImage}
+          priority
         />
       </div>
 
