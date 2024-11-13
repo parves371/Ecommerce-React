@@ -1,6 +1,7 @@
 "use client";
 import ImageGallery from "@/component/shope/single-product/ImageGallery";
 import ProductDetail from "@/component/shope/single-product/ProductDetail";
+import ProductTabs from "@/component/shope/single-product/product-tab/ProductTabs";
 import Link from "next/link";
 import React from "react";
 
@@ -56,8 +57,8 @@ const Page = ({ params }: { params: Params }) => {
                     <ProductDetail
                       title="Colorful Pattern Shirts HD450"
                       brand="Bootstrap"
-                      rating={90}
-                      reviews={25}
+                      rating={60}
+                      reviews={250}
                       price={120}
                       oldPrice={200}
                       discount={40}
@@ -82,7 +83,7 @@ const Page = ({ params }: { params: Params }) => {
                     {/* <!-- Detail Info --> */}
                   </div>
                 </div>
-                
+                <ProductTabs />
               </div>
             </div>
           </div>
