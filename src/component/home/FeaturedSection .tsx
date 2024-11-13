@@ -4,42 +4,49 @@ const FeaturedSection = () => {
   // Data for features
   const features = [
     {
+      id: 1,
       imageSrc: "/imgs/theme/icons/feature-1.png",
       altText: "Free Shipping",
       label: "Free Shipping",
       bgColorClass: "bg-1",
     },
     {
+      id: 2,
       imageSrc: "/imgs/theme/icons/feature-2.png",
       altText: "Online Order",
       label: "Online Order",
       bgColorClass: "bg-3",
     },
     {
+      id: 3,
       imageSrc: "/imgs/theme/icons/feature-3.png",
       altText: "Save Money",
       label: "Save Money",
       bgColorClass: "bg-2",
     },
     {
+      id: 4,
       imageSrc: "/imgs/theme/icons/feature-4.png",
       altText: "Promotions",
       label: "Promotions",
       bgColorClass: "bg-4",
     },
     {
+      id: 5,
       imageSrc: "/imgs/theme/icons/feature-5.png",
       altText: "Happy Sell",
       label: "Happy Sell",
       bgColorClass: "bg-5",
     },
     {
+      id: 6,
       imageSrc: "/imgs/theme/icons/feature-6.png",
       altText: "24/7 Support",
       label: "24/7 Support",
       bgColorClass: "bg-6",
     },
   ];
+  
 
   return (
     <section className="featured section-padding position-relative">

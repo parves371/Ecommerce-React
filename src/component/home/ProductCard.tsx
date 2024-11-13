@@ -13,7 +13,6 @@ import "tailwindcss/tailwind.css"; // Import directly in JavaScript entry point
 interface ProductCardProps {
   imgSrcDefault: string;
   imgSrcHover: string;
-  productLink: string;
   categoryLink: string;
   category: string;
   productName: string;
@@ -21,12 +20,13 @@ interface ProductCardProps {
   oldPrice?: string;
   badgeText?: string;
   rating?: number; // Rating as a percentage, e.g., 90 for 90%
+  id: string;
 }
 
 const ProductCard: FC<ProductCardProps> = ({
+  id,
   imgSrcDefault,
   imgSrcHover,
-  productLink,
   categoryLink,
   category,
   productName,
@@ -45,7 +45,7 @@ const ProductCard: FC<ProductCardProps> = ({
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
-            <Link href={productLink}>
+            <Link href={`/shop/product/${id}`}>
               <Image
                 className="default-img"
                 src={imgSrcDefault}
@@ -100,7 +100,7 @@ const ProductCard: FC<ProductCardProps> = ({
             <Link href={categoryLink}>{category}</Link>
           </div>
           <h2>
-            <Link href={productLink}>{productName}</Link>
+            <Link href={`/shop/product/${id}`}>{productName}</Link>
           </h2>
 
           {/* Rating Section */}
