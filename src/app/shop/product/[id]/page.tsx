@@ -58,9 +58,6 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
   console.log(params.id);
 
   useEffect(() => {
-    console.log("Looking for product with ID:", params.id);
-    console.log("Available products:", singleProduct);
-
     const productData = singleProduct.find((item) => item.id === params.id) as
       | Product
       | undefined;
@@ -121,7 +118,7 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
                     {/* Detail Information */}
                   </div>
                 </div>
-                <ProductTabs />
+                <ProductTabs id={product.id} />
               </div>
             </div>
           </div>

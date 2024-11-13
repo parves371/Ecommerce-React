@@ -5,7 +5,10 @@ import DescriptionTab from "./DescriptionTab";
 import AdditionalInfoTab from "./AdditionalInfoTab";
 import ReviewsTab from "./ReviewsTab";
 
-const ProductTabs: React.FC = () => {
+interface TabNavProps {
+  id: number;
+}
+const ProductTabs: React.FC<TabNavProps> = ({ id }) => {
   const [activeTab, setActiveTab] = useState("Description");
 
   return (
@@ -14,7 +17,7 @@ const ProductTabs: React.FC = () => {
       <div className="tab-content shop_info_tab entry-main-content">
         {activeTab === "Description" && <DescriptionTab />}
         {activeTab === "Additional-info" && <AdditionalInfoTab />}
-        {activeTab === "Reviews" && <ReviewsTab />}
+        {activeTab === "Reviews" && <ReviewsTab id={id} />}
       </div>
     </div>
   );

@@ -3,7 +3,10 @@ import React from "react";
 import StarRating from "./StarRating";
 import ReviewForm from "./ReviewForm";
 
-const ReviewsTab: React.FC = () => {
+interface ReviewsTabProps {
+  id: number;
+}
+const ReviewsTab: React.FC<ReviewsTabProps> = ({ id }) => {
   const ratings = {
     5: 50,
     4: 25,
@@ -37,7 +40,7 @@ const ReviewsTab: React.FC = () => {
           </div>
         </div>
       </div>
-      <ReviewForm />
+      <ReviewForm id={id} />
     </div>
   );
 };

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-const ReviewForm: React.FC = () => {
+interface StarRatingProps {
+  id: number;
+}
+const ReviewForm: React.FC<StarRatingProps> = ({ id }) => {
+  console.log(id);
   const [rating, setRating] = useState<number>(0);
 
   const handleRatingClick = (value: number) => {
@@ -11,7 +15,7 @@ const ReviewForm: React.FC = () => {
   return (
     <div className="comment-form p-6 border rounded-lg shadow-sm">
       <h4 className="text-lg font-semibold mb-4">Add a review</h4>
-      
+
       <div className="flex items-center mb-4">
         <p className="text-sm font-medium mr-2">Rating:</p>
         <div className="flex space-x-1">
@@ -21,8 +25,8 @@ const ReviewForm: React.FC = () => {
               type="button"
               onClick={() => handleRatingClick(star)}
               className="focus:outline-none p-0 m-0 bg-transparent border-none appearance-none" // Ensure no background, border, or appearance
-              aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
-              style={{ outline: 'none', border: 'none' }} // Inline styles to enforce no border
+              aria-label={`Rate ${star} star${star > 1 ? "s" : ""}`}
+              style={{ outline: "none", border: "none" }} // Inline styles to enforce no border
             >
               {rating >= star * 20 ? (
                 <FaStar className="text-yellow-500 text-2xl" />
@@ -33,7 +37,7 @@ const ReviewForm: React.FC = () => {
           ))}
         </div>
       </div>
-      
+
       <form className="space-y-4">
         <textarea
           className="form-control w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-teal-500"
