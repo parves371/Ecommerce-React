@@ -25,7 +25,6 @@ const Article: React.FC<ArticleProps> = ({
             alt={title}
             width={86}
             height={86}
-            layout="responsive"
           />
         </div>
       </Link>

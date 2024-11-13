@@ -105,34 +105,51 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           )}
         </ul>
       </div>
-      <div className="attr-detail attr-color mb-15">
-        <strong className="mr-10">Color</strong>
-        <ul className="list-filter color-filter">
-          {colors.map((color) => (
-            <li key={color} className={selectedColor === color ? "active" : ""}>
-              <Link
-                href="#"
-                onClick={() => setSelectedColor(color)}
-                data-color={color}
-              >
-                <span className={`product-color-${color.toLowerCase()}`}></span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="attr-detail attr-size">
-        <strong className="mr-10">Size</strong>
-        <ul className="list-filter size-filter font-small">
-          {sizes.map((size) => (
-            <li key={size} className={selectedSize === size ? "active" : ""}>
-              <Link href="#" onClick={() => setSelectedSize(size)}>
-                {size}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      <div className="attr-detail attr-color mb-4">
+      <strong className="mr-3">Color</strong>
+      <ul className="flex space-x-2">
+        {colors.map((color) => (
+          <li key={color} className="relative">
+            <button
+              onClick={() => setSelectedColor(color)}
+              className={`w-6 h-6 rounded-full border-1 focus:outline-none ${
+                selectedColor === color ? "border-black" : "border-black"
+              }`}
+              style={{
+                backgroundColor: color,
+              }}
+              aria-label={`Select color ${color}`}
+            ></button>
+            {selectedColor === color && (
+              <span className="absolute top-0 right-0 transform -translate-x-1/4 -translate-y-1/4 w-2 h-2 bg-green-500 rounded-full border border-white"></span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div className="attr-detail attr-size">
+      <strong className="mr-3">Size</strong>
+      <ul className="flex space-x-2">
+        {sizes.map((size) => (
+          <li key={size}>
+            <button
+              onClick={() => setSelectedSize(size)}
+              className={`px-3 py-1 rounded border focus:outline-none ${
+                selectedSize === size
+                  ? "bg-[#088178] text-white"
+                  : "bg-white text-gray-800 border-gray-300"
+              }`}
+            >
+              {size}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+
       <div className="bt-1 border-color-1 mt-30 mb-30"></div>
       <div className="detail-extralink">
         <div className="detail-qty border radius">

@@ -62,7 +62,7 @@ function PopularCategories() {
                       alt={category.name}
                       width={200}
                       height={200}
-                      layout="responsive"
+                  
                     />
                   </figure>
                   <h5 className="text-center mt-2">

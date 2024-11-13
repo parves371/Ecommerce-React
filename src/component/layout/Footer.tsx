@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
                     className="icon-email"
                     src="/imgs/theme/icons/icon-email.svg"
                     alt="Email icon"
-                    width={30} // add width/height to prevent layout shift
+                    width={30} 
                     height={30}
-                    layout="responsive"
+             
                   />
                   <h4 className="font-size-20 mb-0 ml-3">
                     Sign up to Newsletter
@@ -59,7 +59,6 @@ const Footer: React.FC = () => {
                       alt="logo"
                       width={120}
                       height={50}
-                      layout="responsive"
                     />
                   </Link>
                 </div>
@@ -90,7 +89,7 @@ const Footer: React.FC = () => {
                       alt="Facebook"
                       width={24}
                       height={24}
-                      layout="responsive"
+                     
                     />
                   </Link>
                   <Link href="#">
@@ -99,7 +98,7 @@ const Footer: React.FC = () => {
                       alt="Twitter"
                       width={24}
                       height={24}
-                      layout="responsive"
+                     
                     />
                   </Link>
                   <Link href="#">
@@ -116,7 +115,7 @@ const Footer: React.FC = () => {
                       alt="Pinterest"
                       width={24}
                       height={24}
-                      layout="responsive"
+                   
                     />
                   </Link>
                   <Link href="#">
@@ -125,7 +124,7 @@ const Footer: React.FC = () => {
                       alt="YouTube"
                       width={24}
                       height={24}
-                      layout="responsive"
+                
                     />
                   </Link>
                 </div>
@@ -191,7 +190,7 @@ const Footer: React.FC = () => {
                         alt="App Store"
                         width={135}
                         height={40}
-                        layout="responsive"
+                   
                       />
                     </Link>
                     <Link href="#" className="hover-up">
@@ -200,7 +199,7 @@ const Footer: React.FC = () => {
                         alt="Google Play"
                         width={135}
                         height={40}
-                        layout="responsive"
+                        
                       />
                     </Link>
                   </div>

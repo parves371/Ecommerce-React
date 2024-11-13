@@ -20,7 +20,7 @@ const Banner5: React.FC<BannerProps> = ({
     className="banner-img banner-1 wow fadeIn animated"
     style={{ width: "100%" }}
   >
-    <Image src={imageUrl} alt="" width={300} height={300} layout="responsive" />
+    <Image src={imageUrl} alt="" width={300} height={300} />
     <div className="banner-text">
       <span>{subtitle}</span>
       <h4>{title}</h4>

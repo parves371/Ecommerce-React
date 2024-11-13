@@ -3,11 +3,36 @@ import ImageGallery from "@/component/shope/single-product/ImageGallery";
 import ProductDetail from "@/component/shope/single-product/ProductDetail";
 import ProductTabs from "@/component/shope/single-product/product-tab/ProductTabs";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import singleProduct from "@/../data/singleproduct-details.json";
 
+// Define the shape of each product in the JSON file
+interface Product {
+  id: number;
+  title: string;
+  brand: string;
+  rating: number;
+  reviews: number;
+  price: number;
+  oldPrice: number;
+  discount: number;
+  description: string;
+  warranty: string;
+  returnPolicy: string;
+  cashOnDelivery: boolean;
+  colors: string[];
+  sizes: string[];
+  sku: string;
+  tags: string[];
+  stock: number;
+}
+
+// Define the shape of the route parameters
 interface Params {
   id: string;
 }
+
+// Main images and thumbnails for the ImageGallery component
 const mainImages = [
   "/imgs/shop/product-16-2.jpg",
   "/imgs/shop/product-16-1.jpg",
@@ -27,8 +52,28 @@ const thumbnails = [
   "/imgs/shop/thumbnail-8.jpg",
   "/imgs/shop/thumbnail-9.jpg",
 ];
-const Page = ({ params }: { params: Params }) => {
-  console.log(params.id); // Log the `id` from the URL
+
+const Page: React.FC<{ params: Params }> = ({ params }) => {
+  const [product, setProduct] = useState<Product | null>(null);
+  console.log(params.id);
+
+  useEffect(() => {
+    console.log("Looking for product with ID:", params.id);
+    console.log("Available products:", singleProduct);
+
+    const productData = singleProduct.find(
+      (item) => item.id === params.id
+    ) as Product | undefined;
+
+    if (productData) {
+      setProduct(productData);
+    }
+  }, [params.id]);
+
+  if (!product) {
+    return <p>Product not found</p>;
+  }
+
   return (
     <main className="main">
       <div className="page-header breadcrumb-wrap">
@@ -36,7 +81,7 @@ const Page = ({ params }: { params: Params }) => {
           <div className="breadcrumb">
             <Link href="/">Home</Link>
             <span></span> Fashion
-            <span></span> Abstract Print Patchwork Dress
+            <span></span> {product.title}
           </div>
         </div>
       </div>
@@ -48,6 +93,7 @@ const Page = ({ params }: { params: Params }) => {
               <div className="product-detail accordion-detail">
                 <div className="row mb-50">
                   <div className="col-md-6 col-sm-12 col-xs-12">
+                    {/* Image slider */}
                     <ImageGallery
                       mainImages={mainImages}
                       thumbnails={thumbnails}
@@ -55,32 +101,24 @@ const Page = ({ params }: { params: Params }) => {
                   </div>
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <ProductDetail
-                      title="Colorful Pattern Shirts HD450"
-                      brand="Bootstrap"
-                      rating={60}
-                      reviews={250}
-                      price={120}
-                      oldPrice={200}
-                      discount={40}
-                      description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      warranty="1 Year AL Jazeera Brand Warranty"
-                      returnPolicy="30 Day Return Policy"
-                      cashOnDelivery={true}
-                      colors={[
-                        "Red",
-                        "Yellow",
-                        "White",
-                        "Orange",
-                        "Cyan",
-                        "Green",
-                        "Purple",
-                      ]}
-                      sizes={["S", "M", "L", "XL", "XXL"]}
-                      sku="FWM15VKT"
-                      tags={["Cloth", "Women", "Dress"]}
-                      stock={8}
+                      title={product.title}
+                      brand={product.brand}
+                      rating={product.rating}
+                      reviews={product.reviews}
+                      price={product.price}
+                      oldPrice={product.oldPrice}
+                      discount={product.discount}
+                      description={product.description}
+                      warranty={product.warranty}
+                      returnPolicy={product.returnPolicy}
+                      cashOnDelivery={product.cashOnDelivery}
+                      colors={product.colors}
+                      sizes={product.sizes}
+                      sku={product.sku}
+                      tags={product.tags}
+                      stock={product.stock}
                     />
-                    {/* <!-- Detail Info --> */}
+                    {/* Detail Information */}
                   </div>
                 </div>
                 <ProductTabs />

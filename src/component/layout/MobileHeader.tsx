@@ -41,12 +41,12 @@ const MobileHeader = () => {
                 <ul>
                   <li>
                     <Link href="/shop-grid-right">
-                      <i className="evara-font-dress"></i>Women's Clothing
+                      <i className="evara-font-dress"></i>Women&apos;s Clothing
                     </Link>
                   </li>
                   <li>
                     <Link href="/shop-grid-right">
-                      <i className="evara-font-tshirt"></i>Men's Clothing
+                      <i className="evara-font-tshirt"></i>Men&apos;s Clothing
                     </Link>
                   </li>
                   <li>
@@ -180,7 +180,7 @@ const MobileHeader = () => {
                   <ul className="dropdown">
                     <li className="menu-item-has-children">
                       <span className="menu-expand"></span>
-                      <Link href="#">Women's Fashion</Link>
+                      <Link href="#">Women&apos;s Fashion</Link>
                       <ul className="dropdown">
                         <li>
                           <Link href="/shop-product-right">Dresses</Link>
@@ -196,13 +196,13 @@ const MobileHeader = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/shop-product-right">Women's Sets</Link>
+                          <Link href="/shop-product-right">Women&apos;s Sets</Link>
                         </li>
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
                       <span className="menu-expand"></span>
-                      <Link href="#">Men's Fashion</Link>
+                      <Link href="#">Men&apos;s Fashion</Link>
                       <ul className="dropdown">
                         <li>
                           <Link href="/shop-product-right">Jackets</Link>

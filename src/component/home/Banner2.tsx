@@ -11,7 +11,7 @@ function Banner() {
             alt="Banner"
             width={500} // Specify your image width
             height={300} // Specify your image height
-            layout="responsive"
+          
           />
           <div className="banner-text d-md-block d-none">
             <h4 className="mb-15 mt-40 text-brand">Repair Services</h4>

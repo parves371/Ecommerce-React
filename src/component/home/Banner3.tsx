@@ -46,7 +46,7 @@ function Banners() {
                   alt={banner.alt}
                   width={300}
                   height={300}
-                  layout="responsive"
+                
                 />
                 <div className="banner-text">
                   <span>{banner.subtitle}</span>
