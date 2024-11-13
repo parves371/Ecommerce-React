@@ -1,0 +1,74 @@
+/* components/ProductDetail.module.css */
+.detailInfo {
+    /* Your custom styles */
+  }
+  .titleDetail {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .productDetailRating,
+  .productPriceCover {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .textBrand {
+    color: #ff5a5f;
+  }
+  .oldPrice {
+    text-decoration: line-through;
+    margin-left: 15px;
+  }
+  .savePrice {
+    color: green;
+    margin-left: 15px;
+  }
+  .shortDesc {
+    margin-top: 15px;
+  }
+  .productSortInfo li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+  .colorFilter,
+  .sizeFilter {
+    display: flex;
+  }
+  .colorFilter li,
+  .sizeFilter li {
+    margin-right: 10px;
+  }
+  .active {
+    font-weight: bold;
+    color: #007bff;
+  }
+  .detailExtralink {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .detailQty {
+    display: flex;
+    align-items: center;
+  }
+  .detailQty button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .buttonAddToCart {
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .productMeta {
+    margin-top: 15px;
+  }
+  .inStock {
+    color: green;
+  }
+  
