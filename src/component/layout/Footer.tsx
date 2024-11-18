@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                       src="/imgs/theme/logo.svg"
                       alt="logo"
                       width={120}
-                      height={50}
+                      height={33}
                     />
                   </Link>
                 </div>

@@ -110,7 +110,7 @@ const Header = () => {
           <div className="header-wrap">
             <div className="logo logo-width-1">
               <Link href="/">
-                <Image src={logo} alt="logo" width={100} height={50} />
+                <Image src={logo} alt="logo" width={120} height={33} />
               </Link>
             </div>
             <div className="header-right">

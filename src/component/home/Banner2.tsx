@@ -9,8 +9,8 @@ function Banner() {
           <Image
             src="/imgs/banner/banner-4.png"
             alt="Banner"
-            width={500} // Specify your image width
-            height={300} // Specify your image height
+            width={1296} // Specify your image width
+            height={295} // Specify your image height
           
           />
           <div className="banner-text d-md-block d-none">

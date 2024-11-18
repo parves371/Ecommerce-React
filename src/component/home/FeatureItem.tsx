@@ -20,6 +20,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
         alt={altText}
         width={152}
         height={105}
+        priority
       />
       <h4 className={bgColorClass}>{label}</h4>
     </div>

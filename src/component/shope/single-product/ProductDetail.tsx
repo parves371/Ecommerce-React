@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { addToCart } from "@/lib/features/cart/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
-
+import { toast } from "react-toastify";
 interface ProductDetailProps {
   id: number;
   imgSrcDefault: string;
@@ -63,9 +63,18 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       quantity,
       selectedColor,
       selectedSize,
-      imgSrcDefault
+      imgSrcDefault,
     };
     dispatch(addToCart(product));
+    toast.success(`${title} has been added to your cart!`, {
+      position: "bottom-right",
+      autoClose: 3000, // Automatically close after 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   return (
     <div className="detail-info">

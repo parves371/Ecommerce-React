@@ -44,8 +44,8 @@ function Banners() {
                 <Image
                   src={banner.src}
                   alt={banner.alt}
-                  width={300}
-                  height={300}
+                  width={416}
+                  height={117}
                 
                 />
                 <div className="banner-text">

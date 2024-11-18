@@ -35,7 +35,7 @@ const ProductRow: FC<ProductRowProps> = ({
           alignItems: "center",
         }}
       >
-        <Image src={imageUrl} alt={productName} width={100} height={100} />
+        <Image src={imageUrl} alt={productName} width={100} height={100}  priority/>
       </td>
       <td className="product-des product-name">
         <h5 className="product-name">
