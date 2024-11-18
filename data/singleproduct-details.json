@@ -1,12 +1,13 @@
 [
   {
     "id": "1",
-    "title": "Colorful Pattern Shirts HD450",
+    "imgSrcDefault": "/imgs/shop/product-1-1.jpg",
+    "title": "Colorful Pattern Shirts",
     "brand": "Bootstrap",
-    "rating": 60,
+    "rating": 90,
     "reviews": 250,
-    "price": 120,
-    "oldPrice": 200,
+    "price": 238.85,
+    "oldPrice": 245.8,
     "discount": 40,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     "warranty": "1 Year AL Jazeera Brand Warranty",
@@ -20,12 +21,14 @@
   },
   {
     "id": "2",
-    "title": "Elegant Casual Shirt",
+    "imgSrcDefault": "/imgs/shop/product-2-1.jpg",
+
+    "title": "Colorful Pattern Shirts",
     "brand": "FashionHub",
     "rating": 85,
     "reviews": 320,
-    "price": 150,
-    "oldPrice": 250,
+    "price": 238.85,
+    "oldPrice": 245.8,
     "discount": 40,
     "description": "A stylish shirt perfect for casual outings.",
     "warranty": "6 Months Warranty",
@@ -40,7 +43,8 @@
   },
   {
     "id": "3",
-    "title": "Summer Beach Dress",
+    "imgSrcDefault": "/imgs/shop/product-3-1.jpg",
+    "title": "Colorful Pattern Shirts",
     "brand": "SunnyWear",
     "rating": 75,
     "reviews": 150,
@@ -60,6 +64,7 @@
   },
   {
     "id": "4",
+    "imgSrcDefault": "/imgs/shop/product-4-1.jpg",
     "title": "Formal Office Blazer",
     "brand": "OfficePro",
     "rating": 90,
@@ -79,6 +84,7 @@
   },
   {
     "id": "5",
+    "imgSrcDefault": "/imgs/shop/product-5-1.jpg",
     "title": "Sporty Running Shoes",
     "brand": "Sporty",
     "rating": 70,
@@ -99,6 +105,7 @@
   },
   {
     "id": "6",
+    "imgSrcDefault": "/imgs/shop/product-6-1.jpg",
     "title": "Winter Warm Jacket",
     "brand": "WinterGear",
     "rating": 88,
@@ -117,7 +124,9 @@
     "stock": 10
   },
   {
+
     "id": "7",
+    "imgSrcDefault": "/imgs/shop/product-7-1.jpg",
     "title": "Cotton Summer Hat",
     "brand": "SunnyWear",
     "rating": 65,
@@ -138,6 +147,7 @@
   },
   {
     "id": "8",
+    "imgSrcDefault": "/imgs/shop/product-8-1.jpg",
     "title": "Classic Leather Wallet",
     "brand": "LeatherWorks",
     "rating": 95,
@@ -158,6 +168,7 @@
   },
   {
     "id": "9",
+    "imgSrcDefault": "/imgs/shop/product-9-1.jpg",
     "title": "Wireless Earbuds",
     "brand": "TechGuru",
     "rating": 80,

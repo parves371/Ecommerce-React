@@ -6,11 +6,10 @@ import "./main.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css'; // Import Font Awesome CSS
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // Import Font Awesome CSS
+import StoreProvider from "./StoreProvider";
 config.autoAddCss = false; // Prevent auto-adding CSS
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

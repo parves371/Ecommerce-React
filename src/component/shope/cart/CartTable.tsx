@@ -1,18 +1,21 @@
 import CartItem from "./CartItem";
 import { FC } from "react";
 
+interface CartItemProps {
+  id: number; // Unique identifier (updated to match Redux slice)
+  imgSrcDefault: string; // Image URL
+  title: string; // Product name
+  price: number; // Product price
+  quantity: number; // Quantity of the item
+  selectedColor?: string; // Optional selected color
+  selectedSize?: string; // Optional selected size
+}
+
 interface CartTableProps {
-  items: {
-    imageUrl: string;
-    productName: string;
-    productUrl: string;
-    price: number;
-    quantity: number;
-    subtotal: number;
-  }[];
-  onRemoveItem: (index: number) => void;
-  onIncreaseQuantity: (index: number) => void;
-  onDecreaseQuantity: (index: number) => void;
+  items: CartItemProps[];
+  onRemoveItem: (id: number) => void; // Identify item by `id` for removal
+  onIncreaseQuantity: (id: number) => void; // Increase quantity by `id`
+  onDecreaseQuantity: (id: number) => void; // Decrease quantity by `id`
 }
 
 const CartTable: FC<CartTableProps> = ({
@@ -35,18 +38,18 @@ const CartTable: FC<CartTableProps> = ({
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) => (
+          {items.map((item) => (
             <CartItem
-              key={index}
-              imageUrl={item.imageUrl}
-              productName={item.productName}
-              productUrl={item.productUrl}
+              key={item.id}
+              imageUrl={item.imgSrcDefault}
+              productName={item.title}
+              productUrl={`#`} // Replace with dynamic product URL if available
               price={item.price}
               quantity={item.quantity}
-              subtotal={item.subtotal}
-              onRemove={() => onRemoveItem(index)}
-              onIncreaseQuantity={() => onIncreaseQuantity(index)}
-              onDecreaseQuantity={() => onDecreaseQuantity(index)}
+              subtotal={item.price * item.quantity} // Calculate subtotal dynamically
+              onRemove={() => onRemoveItem(item.id)}
+              onIncreaseQuantity={() => onIncreaseQuantity(item.id)}
+              onDecreaseQuantity={() => onDecreaseQuantity(item.id)}
             />
           ))}
         </tbody>

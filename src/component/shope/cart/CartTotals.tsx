@@ -2,7 +2,7 @@ import { FC } from "react";
 
 interface CartTotalsProps {
   subtotal: number;
-  shippingCost: string;
+  shippingCost: string | number;
   total: number;
 }
 
@@ -18,7 +18,9 @@ const CartTotals: FC<CartTotalsProps> = ({ subtotal, shippingCost, total }) => {
             <tr>
               <td className="cart_total_label">Cart Subtotal</td>
               <td className="cart_total_amount">
-                <span className="font-lg fw-900 text-brand">${subtotal.toFixed(2)}</span>
+                <span className="font-lg fw-900 text-brand">
+                  ${subtotal.toFixed(2)}
+                </span>
               </td>
             </tr>
             <tr>
@@ -31,7 +33,9 @@ const CartTotals: FC<CartTotalsProps> = ({ subtotal, shippingCost, total }) => {
               <td className="cart_total_label">Total</td>
               <td className="cart_total_amount">
                 <strong>
-                  <span className="font-xl fw-900 text-brand">${total.toFixed(2)}</span>
+                  <span className="font-xl fw-900 text-brand">
+                    ${total.toFixed(2)}
+                  </span>
                 </strong>
               </td>
             </tr>

@@ -1,75 +1,51 @@
 "use client";
-import Breadcrumb from "@/component/shope/cart/BreadcrumbProps ";
+import Breadcrumb from "@/component/shope/cart/BreadcrumbProps";
 import CartTable from "@/component/shope/cart/CartTable";
 import CartTotals from "@/component/shope/cart/CartTotals";
 import ShippingCalculator from "@/component/shope/cart/ShippingForm";
-import { useState } from "react";
+import { removeFromCart, updateQuantity } from "@/lib/features/cart/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { RootState } from "@/lib/store";
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      imageUrl: "/imgs/shop/product-1-2.jpg",
-      productName: "J.Crew Mercantile Women's Short-Sleeve",
-      productUrl: "/shop-product-right",
-      price: 65.0,
-      quantity: 1,
-      subtotal: 65.0,
-    },
-    {
-      imageUrl: "/imgs/shop/product-11-2.jpg",
-      productName: "Amazon Essentials Women's Tank",
-      productUrl: "/shop-product-right",
-      price: 75.0,
-      quantity: 2,
-      subtotal: 150.0,
-    },
-    {
-      imageUrl: "/imgs/shop/product-6-1.jpg",
-      productName: "Amazon Brand - Daily Ritual Women's Jersey",
-      productUrl: "/shop-product-right",
-      price: 62.0,
-      quantity: 1,
-      subtotal: 62.0,
-    },
-  ]);
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state: RootState) => state.cart.items);
 
-  const handleRemoveItem = (index: number) => {
-    const updatedItems = cartItems.filter((_, i) => i !== index);
-    setCartItems(updatedItems);
+  console.log("Current Cart Items:", cartItems);
+
+  // Handle item removal
+  const handleRemoveItem = (id: number) => {
+    dispatch(removeFromCart(id));
   };
 
-  const handleIncreaseQuantity = (index: number) => {
-    const updatedItems = cartItems.map((item, i) =>
-      i === index
-        ? {
-            ...item,
-            quantity: item.quantity + 1,
-            subtotal: item.price * (item.quantity + 1),
-          }
-        : item
-    );
-    setCartItems(updatedItems);
+  // Handle quantity increase
+  const handleIncreaseQuantity = (id: number) => {
+    const item = cartItems.find((item) => item.id === id);
+    if (item) {
+      dispatch(updateQuantity({ id, quantity: item.quantity + 1 }));
+    }
   };
 
-  const handleDecreaseQuantity = (index: number) => {
-    const updatedItems = cartItems.map((item, i) =>
-      i === index && item.quantity > 1
-        ? {
-            ...item,
-            quantity: item.quantity - 1,
-            subtotal: item.price * (item.quantity - 1),
-          }
-        : item
-    );
-    setCartItems(updatedItems);
+  // Handle quantity decrease
+  const handleDecreaseQuantity = (id: number) => {
+    const item = cartItems.find((item) => item.id === id);
+    if (item && item.quantity > 1) {
+      dispatch(updateQuantity({ id, quantity: item.quantity - 1 }));
+    }
   };
 
+  // Calculate cart subtotal
   const cartSubtotal = cartItems.reduce(
-    (total, item) => total + item.subtotal,
+    (total, item) => total + item.price * item.quantity,
     0
   );
-  const shippingCost = "Free Shipping";
-  const cartTotal = cartSubtotal;
+
+  // Placeholder for shipping cost (can be dynamic)
+  const shippingCost = cartSubtotal > 100 ? "Free Shipping" : 10.0; // Example logic
+
+  // Total calculation
+  const cartTotal =
+    cartSubtotal + (shippingCost === "Free Shipping" ? 0 : Number(shippingCost));
 
   return (
     <main className="main">

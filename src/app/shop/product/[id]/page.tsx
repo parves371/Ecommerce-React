@@ -9,6 +9,7 @@ import singleProduct from "@/../data/singleproduct-details.json";
 // Define the shape of each product in the JSON file
 interface Product {
   id: number;
+  imgSrcDefault: string;
   title: string;
   brand: string;
   rating: number;
@@ -55,7 +56,6 @@ const thumbnails = [
 
 const Page: React.FC<{ params: Params }> = ({ params }) => {
   const [product, setProduct] = useState<Product | null>(null);
-  console.log(params.id);
 
   useEffect(() => {
     const productData = singleProduct.find((item) => item.id === params.id) as
@@ -99,6 +99,7 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <ProductDetail
                       id={product.id}
+                      imgSrcDefault={product.imgSrcDefault}
                       title={product.title}
                       brand={product.brand}
                       rating={product.rating}

@@ -1,10 +1,11 @@
-// components/ProductDetail.tsx
 import Link from "next/link";
 import React, { useState } from "react";
-import { addToCart } from "../../../../actions/add-to-cart";
+import { addToCart } from "@/lib/features/cart/cartSlice";
+import { useAppDispatch } from "@/lib/hooks";
 
 interface ProductDetailProps {
   id: number;
+  imgSrcDefault: string;
   title: string;
   brand: string;
   rating: number;
@@ -25,6 +26,7 @@ interface ProductDetailProps {
 
 const ProductDetail: React.FC<ProductDetailProps> = ({
   id,
+  imgSrcDefault,
   title,
   brand,
   rating,
@@ -45,6 +47,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
+  const dispatch = useAppDispatch();
 
   const handleQuantityChange = (type: "increment" | "decrement") => {
     setQuantity((prev) =>
@@ -53,8 +56,16 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   };
 
   const handleAddToCart = () => {
-    // Implement your add to cart logic here
-    addToCart(id);
+    const product = {
+      id,
+      title,
+      price,
+      quantity,
+      selectedColor,
+      selectedSize,
+      imgSrcDefault
+    };
+    dispatch(addToCart(product));
   };
   return (
     <div className="detail-info">
