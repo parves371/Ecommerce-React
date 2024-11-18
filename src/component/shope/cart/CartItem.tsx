@@ -5,9 +5,9 @@ interface CartItemProps {
   imageUrl: string;
   productName: string;
   productUrl: string;
-  price: number;
+  price: number | string;
   quantity: number;
-  subtotal: number;
+  subtotal: number | string;
   onRemove: () => void;
   onIncreaseQuantity: () => void;
   onDecreaseQuantity: () => void;
@@ -42,7 +42,7 @@ const CartItem: FC<CartItemProps> = ({
         </h5>
       </td>
       <td className="price" data-title="Price">
-        <span>${price.toFixed(2)}</span>
+        <span>${price}</span>
       </td>
       <td className="text-center" data-title="Quantity">
         <div className="detail-qty border radius m-auto">
@@ -56,7 +56,7 @@ const CartItem: FC<CartItemProps> = ({
         </div>
       </td>
       <td className="text-right" data-title="Subtotal">
-        <span>${subtotal.toFixed(2)}</span>
+        <span>${subtotal}</span>
       </td>
       <td className="action" data-title="Remove">
         <a href="#" onClick={onRemove}>

@@ -11,8 +11,6 @@ const CartPage = () => {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state: RootState) => state.cart.items);
 
-  console.log("Current Cart Items:", cartItems);
-
   // Handle item removal
   const handleRemoveItem = (id: number) => {
     dispatch(removeFromCart(id));
@@ -45,7 +43,8 @@ const CartPage = () => {
 
   // Total calculation
   const cartTotal =
-    cartSubtotal + (shippingCost === "Free Shipping" ? 0 : Number(shippingCost));
+    cartSubtotal +
+    (shippingCost === "Free Shipping" ? 0 : Number(shippingCost));
 
   return (
     <main className="main">
