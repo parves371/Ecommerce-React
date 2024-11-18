@@ -1,3 +1,7 @@
+import { addToCart } from "@/lib/features/cart/cartSlice";
+import { toast } from "react-toastify";
+
+import { useAppDispatch } from "@/lib/hooks";
 import {
   faEye,
   faHeart,
@@ -16,11 +20,11 @@ interface ProductCardProps {
   categoryLink: string;
   category: string;
   productName: string;
-  price: string;
-  oldPrice?: string;
+  price: number;
+  oldPrice?: number;
   badgeText?: string;
   rating?: number; // Rating as a percentage, e.g., 90 for 90%
-  id: string;
+  id: number;
 }
 
 const ProductCard: FC<ProductCardProps> = ({
@@ -39,6 +43,28 @@ const ProductCard: FC<ProductCardProps> = ({
   const fullStars = Math.floor(rating / 20); // 5-star system, so each star represents 20%
   const halfStar = rating % 20 >= 10 ? 1 : 0; // If remainder is 10 or more, show half star
   const emptyStars = 5 - fullStars - halfStar;
+
+  const dispatch = useAppDispatch();
+
+  const addCart = () => {
+    const product = {
+      id,
+      title: productName,
+      price,
+      quantity: 1,
+      imgSrcDefault,
+    };
+    dispatch(addToCart(product));
+    toast.success(`${productName} has been added to your cart!`, {
+      position: "bottom-right",
+      autoClose: 3000, // Automatically close after 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   return (
     <div className="col-lg-3 col-md-4 col-12 col-sm-6">
@@ -146,10 +172,10 @@ const ProductCard: FC<ProductCardProps> = ({
             {oldPrice && <span className="old-price">{oldPrice}</span>}
           </div>
           <div className="product-action-1 show ">
-            <Link
+            <button
               aria-label="Add To Cart"
               className="action-btn hover-up"
-              href="shop-cart"
+              onClick={addCart}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -157,7 +183,7 @@ const ProductCard: FC<ProductCardProps> = ({
               }}
             >
               <i className="fi-rs-shopping-bag-add"></i>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

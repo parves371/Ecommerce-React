@@ -34,7 +34,6 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    // Add an item to the cart
     addToCart: (state, action: PayloadAction<CartItem>) => {
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
@@ -52,12 +51,12 @@ export const cartSlice = createSlice({
 
       saveCartToLocalStorage(state); // Save updated state to localStorage
     },
-    // Remove an item from the cart
+
     removeFromCart: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
       saveCartToLocalStorage(state); // Save updated state to localStorage
     },
-    // Update the quantity of a specific item
+
     updateQuantity: (
       state,
       action: PayloadAction<{ id: number; quantity: number }>
@@ -68,7 +67,7 @@ export const cartSlice = createSlice({
       }
       saveCartToLocalStorage(state); // Save updated state to localStorage
     },
-    // Clear all items in the cart
+
     clearCart: (state) => {
       state.items = [];
       saveCartToLocalStorage(state); // Save updated state to localStorage

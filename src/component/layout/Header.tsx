@@ -2,14 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import menuBanner from "@/imgs/banner/menu-banner.jpg";
-import thumbnail2 from "@/imgs/shop/thumbnail-2.jpg";
-import thumbnail3 from "@/imgs/shop/thumbnail-3.jpg";
 import flagDt from "@/imgs/theme/flag-dt.png";
 import flagFr from "@/imgs/theme/flag-fr.png";
 import flagRu from "@/imgs/theme/flag-ru.png";
 import cart from "@/imgs/theme/icons/icon-cart.svg";
 import heart from "@/imgs/theme/icons/icon-heart.svg";
 import logo from "@/imgs/theme/logo.svg";
+import CartDropdown from "./CartDropdown";
 
 const Header = () => {
   return (
@@ -150,77 +149,7 @@ const Header = () => {
                       <Image alt="Cart" src={cart} width={24} height={24} />
                       <span className="pro-count blue">2</span>
                     </Link>
-                    <div className="cart-dropdown-wrap cart-dropdown-hm2">
-                      <ul>
-                        <li>
-                          <div className="shopping-cart-img">
-                            <Link href="/shop-product-right">
-                              <Image
-                                alt="Evara"
-                                src={thumbnail3}
-                                width={50}
-                                height={50}
-                              />
-                            </Link>
-                          </div>
-                          <div className="shopping-cart-title">
-                            <h4>
-                              <Link href="/shop-product-right">
-                                Daisy Casual Bag
-                              </Link>
-                            </h4>
-                            <h4>
-                              <span>1 × </span>$800.00
-                            </h4>
-                          </div>
-                          <div className="shopping-cart-delete">
-                            <Link href="#">
-                              <i className="fi-rs-cross-small"></i>
-                            </Link>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="shopping-cart-img">
-                            <Link href="/shop-product-right">
-                              <Image
-                                alt="Evara"
-                                src={thumbnail2}
-                                width={50}
-                                height={50}
-                              />
-                            </Link>
-                          </div>
-                          <div className="shopping-cart-title">
-                            <h4>
-                              <Link href="/shop-product-right">
-                                Corduroy Shirts
-                              </Link>
-                            </h4>
-                            <h4>
-                              <span>1 × </span>$3200.00
-                            </h4>
-                          </div>
-                          <div className="shopping-cart-delete">
-                            <Link href="#">
-                              <i className="fi-rs-cross-small"></i>
-                            </Link>
-                          </div>
-                        </li>
-                      </ul>
-                      <div className="shopping-cart-footer">
-                        <div className="shopping-cart-total">
-                          <h4>
-                            Total <span>$4000.00</span>
-                          </h4>
-                        </div>
-                        <div className="shopping-cart-button">
-                          <Link href="/shop-cart" className="outline">
-                            View cart
-                          </Link>
-                          <Link href="/shop-checkout">Checkout</Link>
-                        </div>
-                      </div>
-                    </div>
+                    <CartDropdown/>
                   </div>
                 </div>
               </div>

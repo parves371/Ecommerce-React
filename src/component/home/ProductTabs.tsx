@@ -10,14 +10,14 @@ type Tab = {
 };
 
 type Product = {
-  id: string;
+  id: number;
   imgSrcDefault: string;
   imgSrcHover: string;
   categoryLink: string;
   category: string;
   productName: string;
-  price: string;
-  oldPrice: string;
+  price: number;
+  oldPrice: number;
   badgeText: string;
   rating: number;
 };
@@ -36,38 +36,38 @@ const ProductTabs: React.FC = () => {
   const products: Record<string, Product[]> = {
     "tab-one": [
       {
-        id: "1",
+        id: 1,
         imgSrcDefault: "/imgs/shop/product-1-1.jpg",
         imgSrcHover: "/imgs/shop/product-1-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Clothing",
         productName: "Colorful Pattern Shirts",
-        price: "$238.85",
-        oldPrice: "$245.80",
+        price: 238,
+        oldPrice: 245,
         badgeText: "Hot",
         rating: 90,
       },
       {
-        id: "2",
+        id: 2,
         imgSrcDefault: "/imgs/shop/product-2-1.jpg",
         imgSrcHover: "/imgs/shop/product-2-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Clothing",
         productName: "Colorful Pattern Shirts",
-        price: "$238.85",
-        oldPrice: "$245.80",
+        price: 238.85,
+        oldPrice: 245.8,
         badgeText: "New",
         rating: 90,
       },
       {
-        id: "3",
+        id: 3,
         imgSrcDefault: "/imgs/shop/product-3-1.jpg",
         imgSrcHover: "/imgs/shop/product-3-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Clothing",
         productName: "Colorful Pattern Shirts",
-        price: "$238.85",
-        oldPrice: "$245.80",
+        price: 238.85,
+        oldPrice: 245.80,
         badgeText: "Hot",
         rating: 90,
       },
@@ -75,38 +75,38 @@ const ProductTabs: React.FC = () => {
     ],
     "tab-two": [
       {
-        id: "4",
+        id: 4,
         imgSrcDefault: "/imgs/shop/product-4-1.jpg",
         imgSrcHover: "/imgs/shop/product-4-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Clothing",
         productName: "Plain Color Pocket Shirts",
-        price: "$138.85",
-        oldPrice: "$255.80",
+        price: 138.85,
+        oldPrice: 255.80,
         badgeText: "New",
         rating: 80,
       },
       {
-        id: "5",
+        id: 5,
         imgSrcDefault: "/imgs/shop/product-5-1.jpg",
         imgSrcHover: "/imgs/shop/product-5-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Clothing",
         productName: "Plain Color Pocket Shirts",
-        price: "$138.85",
-        oldPrice: "$255.80",
+        price: 138.85,
+        oldPrice: 255.80,
         badgeText: "New",
         rating: 80,
       },
       {
-        id: "6",
+        id: 6,
         imgSrcDefault: "/imgs/shop/product-6-1.jpg",
         imgSrcHover: "/imgs/shop/product-6-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Clothing",
         productName: "Plain Color Pocket Shirts",
-        price: "$138.85",
-        oldPrice: "$255.80",
+        price: 138.85,
+        oldPrice: 255.80,
         badgeText: "New",
         rating: 80,
       },
@@ -114,38 +114,38 @@ const ProductTabs: React.FC = () => {
     ],
     "tab-three": [
       {
-        id: "7",
+        id: 7,
         imgSrcDefault: "/imgs/shop/product-7-1.jpg",
         imgSrcHover: "/imgs/shop/product-7-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Shirts",
         productName: "Vintage Floral Oil Shirts",
-        price: "$338.85",
-        oldPrice: "$445.80",
+        price: 338.85,
+        oldPrice: 445.80,
         badgeText: "Best Sell",
         rating: 70,
       },
       {
-        id: "8",
+        id: 8,
         imgSrcDefault: "/imgs/shop/product-8-1.jpg",
         imgSrcHover: "/imgs/shop/product-8-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Shirts",
         productName: "Vintage Floral Oil Shirts",
-        price: "$338.85",
-        oldPrice: "$445.80",
+        price: 338.85,
+        oldPrice: 445.80,
         badgeText: "Best Sell",
         rating: 70,
       },
       {
-        id: "9",
+        id: 9,
         imgSrcDefault: "/imgs/shop/product-9-1.jpg",
         imgSrcHover: "/imgs/shop/product-9-2.jpg",
         categoryLink: "/shop-grid-right",
         category: "Shirts",
         productName: "Vintage Floral Oil Shirts",
-        price: "$338.85",
-        oldPrice: "$445.80",
+        price: 338.85,
+        oldPrice: 445.80,
         badgeText: "Sale",
         rating: 70,
       },
