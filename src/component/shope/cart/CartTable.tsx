@@ -40,18 +40,19 @@ const CartTable: FC<CartTableProps> = ({
         <tbody>
           {items.map((item) => (
             <CartItem
-            key={item.id}
-            imageUrl={item.imgSrcDefault}
-            productName={item.title}
-            productUrl={`#`} // Replace with dynamic product URL if available
-            price={Math.floor(item.price).toFixed(2)} // Ensure price is floored and formatted
-            quantity={item.quantity}
-            subtotal={Math.floor(Math.floor(item.price) * item.quantity).toFixed(2)} // Calculate and format subtotal
-            onRemove={() => onRemoveItem(item.id)}
-            onIncreaseQuantity={() => onIncreaseQuantity(item.id)}
-            onDecreaseQuantity={() => onDecreaseQuantity(item.id)}
-          />
-          
+              key={item.id}
+              imageUrl={item.imgSrcDefault}
+              productName={item.title}
+              productUrl={`#`} // Replace with dynamic product URL if available
+              price={Math.floor(item.price).toFixed(2)} // Ensure price is floored and formatted
+              quantity={item.quantity}
+              subtotal={Math.floor(item.price * item.quantity).toFixed(2)} // Calculate and format subtotal
+              selectedColor={item.selectedColor}
+              selectedSize={item.selectedSize}
+              onRemove={() => onRemoveItem(item.id)}
+              onIncreaseQuantity={() => onIncreaseQuantity(item.id)}
+              onDecreaseQuantity={() => onDecreaseQuantity(item.id)}
+            />
           ))}
         </tbody>
       </table>

@@ -8,6 +8,8 @@ interface CartItemProps {
   price: number | string;
   quantity: number;
   subtotal: number | string;
+  selectedColor?: string;
+  selectedSize?: string;
   onRemove: () => void;
   onIncreaseQuantity: () => void;
   onDecreaseQuantity: () => void;
@@ -20,6 +22,8 @@ const CartItem: FC<CartItemProps> = ({
   price,
   quantity,
   subtotal,
+  selectedColor,
+  selectedSize,
   onRemove,
   onIncreaseQuantity,
   onDecreaseQuantity,
@@ -40,6 +44,16 @@ const CartItem: FC<CartItemProps> = ({
         <h5 className="product-name">
           <a href={productUrl}>{productName}</a>
         </h5>
+        {selectedColor && (
+          <p className="selected-color">
+            <strong>Color:</strong> {selectedColor}
+          </p>
+        )}
+        {selectedSize && (
+          <p className="selected-size">
+            <strong>Size:</strong> {selectedSize}
+          </p>
+        )}
       </td>
       <td className="price" data-title="Price">
         <span>${price}</span>

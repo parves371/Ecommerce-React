@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
+import ProductModal from "../modal/ProductModal";
 
 // Define types for tab and product objects
 type Tab = {
@@ -67,7 +68,7 @@ const ProductTabs: React.FC = () => {
         category: "Clothing",
         productName: "Colorful Pattern Shirts",
         price: 238.85,
-        oldPrice: 245.80,
+        oldPrice: 245.8,
         badgeText: "Hot",
         rating: 90,
       },
@@ -82,7 +83,7 @@ const ProductTabs: React.FC = () => {
         category: "Clothing",
         productName: "Plain Color Pocket Shirts",
         price: 138.85,
-        oldPrice: 255.80,
+        oldPrice: 255.8,
         badgeText: "New",
         rating: 80,
       },
@@ -94,7 +95,7 @@ const ProductTabs: React.FC = () => {
         category: "Clothing",
         productName: "Plain Color Pocket Shirts",
         price: 138.85,
-        oldPrice: 255.80,
+        oldPrice: 255.8,
         badgeText: "New",
         rating: 80,
       },
@@ -106,7 +107,7 @@ const ProductTabs: React.FC = () => {
         category: "Clothing",
         productName: "Plain Color Pocket Shirts",
         price: 138.85,
-        oldPrice: 255.80,
+        oldPrice: 255.8,
         badgeText: "New",
         rating: 80,
       },
@@ -121,7 +122,7 @@ const ProductTabs: React.FC = () => {
         category: "Shirts",
         productName: "Vintage Floral Oil Shirts",
         price: 338.85,
-        oldPrice: 445.80,
+        oldPrice: 445.8,
         badgeText: "Best Sell",
         rating: 70,
       },
@@ -133,7 +134,7 @@ const ProductTabs: React.FC = () => {
         category: "Shirts",
         productName: "Vintage Floral Oil Shirts",
         price: 338.85,
-        oldPrice: 445.80,
+        oldPrice: 445.8,
         badgeText: "Best Sell",
         rating: 70,
       },
@@ -145,7 +146,7 @@ const ProductTabs: React.FC = () => {
         category: "Shirts",
         productName: "Vintage Floral Oil Shirts",
         price: 338.85,
-        oldPrice: 445.80,
+        oldPrice: 445.8,
         badgeText: "Sale",
         rating: 70,
       },
@@ -219,6 +220,7 @@ const ProductTabs: React.FC = () => {
               </div>
             </div>
           ))}
+          <ProductModal />
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { addToCart } from "@/lib/features/cart/cartSlice";
 import { toast } from "react-toastify";
 
+import { setShopModalState } from "@/lib/features/misc/miscSlice";
 import { useAppDispatch } from "@/lib/hooks";
 import {
   faEye,
@@ -66,128 +67,134 @@ const ProductCard: FC<ProductCardProps> = ({
     });
   };
 
+  const openModal = () => dispatch(setShopModalState(true));
   return (
-    <div className="col-lg-3 col-md-4 col-12 col-sm-6">
-      <div className="product-cart-wrap mb-30">
-        <div className="product-img-action-wrap">
-          <div className="product-img product-img-zoom">
-            <Link href={`/product/${id}`}>
-              <Image
-                className="default-img"
-                src={imgSrcDefault}
-                alt={productName}
-                width={400}
-                height={400}
-              />
-              <Image
-                className="hover-img"
-                src={imgSrcHover}
-                alt={productName}
-                width={400}
-                height={400}
-              />
-            </Link>
-          </div>
-          <div className="product-action-1">
-            <Link
-              href={categoryLink}
-              aria-label="Quick view"
-              className="action-btn hover-up"
-              data-bs-toggle="modal"
-              data-bs-target="#quickViewModal"
-            >
-              <FontAwesomeIcon icon={faEye} />
-            </Link>
-            <Link
-              href="shop-wishlist.html"
-              aria-label="Add To Wishlist"
-              className="action-btn hover-up"
-            >
-              <FontAwesomeIcon icon={faHeart} />
-            </Link>
-            <Link
-              href="shop-compare.html"
-              aria-label="Compare"
-              className="action-btn hover-up"
-            >
-              <FontAwesomeIcon icon={faShuffle} />
-            </Link>
-          </div>
-
-          {badgeText && (
-            <div className="product-badges product-badges-position product-badges-mrg">
-              <span className={badgeText.toLowerCase()}>{badgeText}</span>
+    <>
+      <div className="col-lg-3 col-md-4 col-12 col-sm-6">
+        <div className="product-cart-wrap mb-30">
+          <div className="product-img-action-wrap">
+            <div className="product-img product-img-zoom">
+              <Link href={`/product/${id}`}>
+                <Image
+                  className="default-img"
+                  src={imgSrcDefault}
+                  alt={productName}
+                  width={400}
+                  height={400}
+                />
+                <Image
+                  className="hover-img"
+                  src={imgSrcHover}
+                  alt={productName}
+                  width={400}
+                  height={400}
+                />
+              </Link>
             </div>
-          )}
-        </div>
+            <div className="product-action-1">
+              <button
+                aria-label="Quick view"
+                className="action-btn hover-up"
+                data-bs-toggle="modal"
+                data-bs-target="#quickViewModal"
+              >
+                <FontAwesomeIcon icon={faEye} onClick={openModal} />
+              </button>
+              <Link
+                href="shop-wishlist.html"
+                aria-label="Add To Wishlist"
+                className="action-btn hover-up"
+              >
+                <FontAwesomeIcon icon={faHeart} />
+              </Link>
+              <Link
+                href="shop-compare.html"
+                aria-label="Compare"
+                className="action-btn hover-up"
+              >
+                <FontAwesomeIcon icon={faShuffle} />
+              </Link>
+            </div>
 
-        <div className="product-content-wrap">
-          <div className="product-category">
-            <Link href={categoryLink}>{category}</Link>
-          </div>
-          <h2>
-            <Link href={`/product/${id}`}>{productName}</Link>
-          </h2>
-
-          {/* Rating Section */}
-          <div className="flex items-center " title={`${rating}%`}>
-            {/* Render full stars */}
-            {Array(fullStars)
-              .fill(0)
-              .map((_, index) => (
-                <FontAwesomeIcon
-                  key={index}
-                  icon={faStar}
-                  style={{ color: "#ffb300" }} // Star color
-                />
-              ))}
-
-            {/* Render half star if applicable */}
-            {halfStar === 1 && (
-              <FontAwesomeIcon
-                icon={faStarHalfAlt}
-                style={{ color: "#ffb300" }} // Half-star color
-              />
+            {badgeText && (
+              <div className="product-badges product-badges-position product-badges-mrg">
+                <span className={badgeText.toLowerCase()}>{badgeText}</span>
+              </div>
             )}
+          </div>
 
-            {/* Render empty stars */}
-            {Array(emptyStars)
-              .fill(0)
-              .map((_, index) => (
+          <div className="product-content-wrap">
+            <div className="product-category">
+              <Link href={categoryLink}>{category}</Link>
+            </div>
+            <h2>
+              <Link href={`/product/${id}`}>{productName}</Link>
+            </h2>
+
+            {/* Rating Section */}
+            <div className="flex items-center " title={`${rating}%`}>
+              {/* Render full stars */}
+              {Array(fullStars)
+                .fill(0)
+                .map((_, index) => (
+                  <FontAwesomeIcon
+                    key={index}
+                    icon={faStar}
+                    style={{ color: "#ffb300" }} // Star color
+                  />
+                ))}
+
+              {/* Render half star if applicable */}
+              {halfStar === 1 && (
                 <FontAwesomeIcon
-                  key={index}
-                  icon={faStar}
-                  style={{ color: "#ccc" }} // Gray color for empty stars
+                  icon={faStarHalfAlt}
+                  style={{ color: "#ffb300" }} // Half-star color
                 />
-              ))}
+              )}
 
-            {/* Display the percentage */}
-            <span style={{ marginLeft: "8px" }} className="ml-2 text-gray-600">
-              {rating}%
-            </span>
-          </div>
+              {/* Render empty stars */}
+              {Array(emptyStars)
+                .fill(0)
+                .map((_, index) => (
+                  <FontAwesomeIcon
+                    key={index}
+                    icon={faStar}
+                    style={{ color: "#ccc" }} // Gray color for empty stars
+                  />
+                ))}
 
-          <div className="product-price">
-            <span>{price}</span>
-            {oldPrice && <span className="old-price">{oldPrice}</span>}
-          </div>
-          <div className="product-action-1 show ">
-            <button
-              aria-label="Add To Cart"
-              className="action-btn hover-up"
-              onClick={addCart}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <i className="fi-rs-shopping-bag-add"></i>
-            </button>
+              {/* Display the percentage */}
+              <span
+                style={{ marginLeft: "8px" }}
+                className="ml-2 text-gray-600"
+              >
+                {rating}%
+              </span>
+            </div>
+
+            <div className="product-price">
+              <span>{price}</span>
+              {oldPrice && <span className="old-price">{oldPrice}</span>}
+            </div>
+            <div className="product-action-1 show ">
+              <button
+                aria-label="Add To Cart"
+                className="action-btn hover-up"
+                onClick={addCart}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <i className="fi-rs-shopping-bag-add"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+    </>
   );
 };
 
