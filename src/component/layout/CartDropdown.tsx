@@ -100,7 +100,7 @@ const CartDropdownItem: React.FC<CartDropdownProps> = ({
             </h4>
           </div>
           <div className="shopping-cart-button">
-            <Link href="/shop/cart" className="outline">
+            <Link href="/cart" className="outline">
               View cart
             </Link>
             <Link href="/shop-checkout">Checkout</Link>

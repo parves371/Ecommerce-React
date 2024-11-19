@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import menuBanner from "@/imgs/banner/menu-banner.jpg";
 import flagDt from "@/imgs/theme/flag-dt.png";
 import flagFr from "@/imgs/theme/flag-fr.png";
 import flagRu from "@/imgs/theme/flag-ru.png";
@@ -95,7 +94,7 @@ const Header = () => {
                   </li>
                   <li>
                     <i className="fi-rs-user"></i>
-                    <Link href="/page-login-register">Log In / Sign Up</Link>
+                    <Link href="/login-register">Log In / Sign Up</Link>
                   </li>
                 </ul>
               </div>
@@ -149,7 +148,7 @@ const Header = () => {
                       <Image alt="Cart" src={cart} width={24} height={24} />
                       <span className="pro-count blue">2</span>
                     </Link>
-                    <CartDropdown/>
+                    <CartDropdown />
                   </div>
                 </div>
               </div>
@@ -505,276 +504,16 @@ const Header = () => {
                   <ul>
                     <li>
                       <Link className="active" href="/">
-                        Home <i className="fi-rs-angle-down"></i>
+                        Home
                       </Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link href="/">Home 1</Link>
-                        </li>
-                        <li>
-                          <Link href="/index-2">Home 2</Link>
-                        </li>
-                        <li>
-                          <Link href="/index-3">Home 3</Link>
-                        </li>
-                        <li>
-                          <Link href="/index-4">Home 4</Link>
-                        </li>
-                      </ul>
                     </li>
 
                     <li>
-                      <Link href="/pages/about-page">About</Link>
+                      <Link href="/about-page">About</Link>
                     </li>
 
                     <li>
-                      <Link href="#">
-                        Shop <i className="fi-rs-angle-down"></i>
-                      </Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link href="/shop">Shop Grid – Sidebar</Link>
-                        </li>
-
-                        <li>
-                          <Link href="/shop/shop-list">
-                            Shop List – Sidebar
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link href="/shop/shop-fullwidth">Shop - Wide</Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            Single Product <i className="fi-rs-angle-right"></i>
-                          </Link>
-                          <ul className="level-menu">
-                            <li>
-                              <Link href="/shop-product-right">
-                                Product – Right Sidebar
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-left">
-                                Product – Left Sidebar
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-full">
-                                Product – No sidebar
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <Link href="/shop-filter">Shop – Filter</Link>
-                        </li>
-                        <li>
-                          <Link href="/shop/wishlist">Shop – Wishlist</Link>
-                        </li>
-                        <li>
-                          <Link href="/shop/cart">Shop – Cart</Link>
-                        </li>
-                        <li>
-                          <Link href="/shop/checkout">Shop – Checkout</Link>
-                        </li>
-                        <li>
-                          <Link href="/shop/compare">Shop – Compare</Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li className="position-static">
-                      <Link href="#">
-                        Mega menu <i className="fi-rs-angle-down"></i>
-                      </Link>
-                      <ul className="mega-menu">
-                        {/* Women's Fashion */}
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <Link className="menu-title" href="#">
-                            Womens Fashion
-                          </Link>
-                          <ul>
-                            <li>
-                              <Link href="/shop-product-right">Dresses</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Blouses & Shirts
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Hoodies & Sweatshirts
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Wedding Dresses
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Prom Dresses
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Cosplay Costumes
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-
-                        {/* Men's Fashion */}
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <Link className="menu-title" href="#">
-                            Mens Fashion
-                          </Link>
-                          <ul>
-                            <li>
-                              <Link href="/shop-product-right">Jackets</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Casual Faux Leather
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Genuine Leather
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Casual Pants
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">Sweatpants</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Harem Pants
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-
-                        {/* Technology */}
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <Link className="menu-title" href="#">
-                            Technology
-                          </Link>
-                          <ul>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Gaming Laptops
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Ultraslim Laptops
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">Tablets</Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Laptop Accessories
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="/shop-product-right">
-                                Tablet Accessories
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-
-                        {/* Banner Section */}
-                        <li className="sub-mega-menu sub-mega-menu-width-34">
-                          <div className="menu-banner-wrap">
-                            <Link href="/shop-product-right">
-                              <Image
-                                src={menuBanner}
-                                alt="Evara"
-                                width={600}
-                                height={400}
-                              />
-                            </Link>
-                            <div className="menu-banner-content">
-                              <h4>Hot deals</h4>
-                              <h3>
-                                Dont miss
-                                <br />
-                                Trending
-                              </h3>
-                              <div className="menu-banner-price">
-                                <span className="new-price text-success">
-                                  Save to 50%
-                                </span>
-                              </div>
-                              <div className="menu-banner-btn">
-                                <Link href="/shop-product-right">Shop now</Link>
-                              </div>
-                            </div>
-                            <div className="menu-banner-discount">
-                              <h3>
-                                <span>35%</span> off
-                              </h3>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link href="/blog-category-grid">
-                        Blog <i className="fi-rs-angle-down"></i>
-                      </Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link href="/blog-category-grid">
-                            Blog Category Grid
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/blog-category-list">
-                            Blog Category List
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/blog-category-big">
-                            Blog Category Big
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/blog-category-fullwidth">
-                            Blog Category Wide
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            Single Post <i className="fi-rs-angle-right"></i>
-                          </Link>
-                          <ul className="level-menu level-menu-modify">
-                            <li>
-                              <Link href="/blog-post-left">Left Sidebar</Link>
-                            </li>
-                            <li>
-                              <Link href="/blog-post-right">Right Sidebar</Link>
-                            </li>
-                            <li>
-                              <Link href="/blog-post-fullwidth">
-                                No Sidebar
-                              </Link>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                      <Link href="/shop">Shop</Link>
                     </li>
 
                     <li>
@@ -783,34 +522,28 @@ const Header = () => {
                       </Link>
                       <ul className="sub-menu">
                         <li>
-                          <Link href="/pages/about-page">About Us</Link>
+                          <Link href="/about-page">About Us</Link>
                         </li>
                         <li>
-                          <Link href="/pages/page-contact">Contact</Link>
+                          <Link href="/page-contact">Contact</Link>
                         </li>
                         <li>
-                          <Link href="/pages/account">My Account</Link>
+                          <Link href="/account">My Account</Link>
                         </li>
                         <li>
-                          <Link href="/pages/login-register">
-                            Login/Register
-                          </Link>
+                          <Link href="/login-register">Login/Register</Link>
                         </li>
                         <li>
-                          <Link href="/pages/purchase-guide">
-                            Purchase Guide
-                          </Link>
+                          <Link href="/purchase-guide">Purchase Guide</Link>
                         </li>
                         <li>
-                          <Link href="/pages/privacy-policy">
-                            Privacy Policy
-                          </Link>
+                          <Link href="/privacy-policy">Privacy Policy</Link>
                         </li>
                         <li>
-                          <Link href="/pages/page-terms">Terms of Service</Link>
+                          <Link href="/page-terms">Terms of Service</Link>
                         </li>
                         <li>
-                          <Link href="/pages/page-404">404 Page</Link>
+                          <Link href="/page-404">404 Page</Link>
                         </li>
                       </ul>
                     </li>

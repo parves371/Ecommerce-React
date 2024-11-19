@@ -71,7 +71,7 @@ const ProductCard: FC<ProductCardProps> = ({
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
-            <Link href={`/shop/product/${id}`}>
+            <Link href={`/product/${id}`}>
               <Image
                 className="default-img"
                 src={imgSrcDefault}
@@ -126,7 +126,7 @@ const ProductCard: FC<ProductCardProps> = ({
             <Link href={categoryLink}>{category}</Link>
           </div>
           <h2>
-            <Link href={`/shop/product/${id}`}>{productName}</Link>
+            <Link href={`/product/${id}`}>{productName}</Link>
           </h2>
 
           {/* Rating Section */}
