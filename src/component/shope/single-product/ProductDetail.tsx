@@ -19,9 +19,9 @@ interface ProductDetailProps {
   cashOnDelivery: boolean;
   colors: string[];
   sizes: string[];
-  sku: string;
-  tags: string[];
-  stock: number;
+  sku?: string;
+  tags?: string[];
+  stock?: number;
 }
 
 const ProductDetail: React.FC<ProductDetailProps> = ({
@@ -217,11 +217,15 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       </div>
       <ul className="product-meta font-xs color-grey mt-50">
         <li className="mb-5">
-          SKU: <a href="#">{sku}</a>
+          {sku && (
+            <span>
+              SKU: <span className="text-body">{sku}</span>
+            </span>
+          )}
         </li>
         <li className="mb-5">
-          Tags:{" "}
-          {tags.map((tag, index) => (
+          {tags && <> Tags</>}
+          {tags?.map((tag, index) => (
             <React.Fragment key={tag}>
               <a href="#" rel="tag">
                 {tag}
@@ -230,12 +234,17 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
             </React.Fragment>
           ))}
         </li>
-        <li>
-          Availability:
-          <span className="in-stock text-success ml-5">
-            {stock} Items In Stock
-          </span>
-        </li>
+
+        {stock ? (
+          <li>
+            Availability:
+            <span className="in-stock text-success ml-5">
+              {stock} Items In Stock
+            </span>
+          </li>
+        ) : (
+          <></>
+        )}
       </ul>
     </div>
   );

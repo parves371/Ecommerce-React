@@ -51,10 +51,15 @@ const Header = () => {
               <div className="header-info header-info-right">
                 <ul>
                   <li>
-                    <a className="language-dropdown-active" href="#">
+                    <a
+                      href="#"
+                      className="language-dropdown-active"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
                       <i className="fi-rs-world"></i> English
-                      <i className="fi-rs-angle-small-down"></i>
                     </a>
+
                     <ul className="language-dropdown">
                       <li>
                         <Link href="#">

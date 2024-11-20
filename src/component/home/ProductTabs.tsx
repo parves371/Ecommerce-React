@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
-import ProductModal from "../modal/ProductModal";
 
 // Define types for tab and product objects
 type Tab = {
@@ -220,7 +219,6 @@ const ProductTabs: React.FC = () => {
               </div>
             </div>
           ))}
-          <ProductModal />
         </div>
       </div>
     </section>

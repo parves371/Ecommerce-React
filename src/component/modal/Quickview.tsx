@@ -27,6 +27,7 @@ interface Product {
 
 interface ProductModalProps {
   isOpen: boolean;
+  id: number | string;
   onClose: () => void;
 }
 
@@ -50,18 +51,24 @@ const thumbnails = [
   "/imgs/shop/thumbnail-9.jpg",
 ];
 
-export const QuikView: React.FC<ProductModalProps> = ({ isOpen, onClose }) => {
+export const QuikView: React.FC<ProductModalProps> = ({
+  isOpen,
+  onClose,
+  id,
+}) => {
   const [product, setProduct] = useState<Product | null>(null);
 
+  console.log("Product ID:", id);
+
   useEffect(() => {
-    const productData = singleProduct.find((item) => item.id === "1") as
+    const productData = singleProduct.find((item) => item.id === `${id}`) as
       | Product
       | undefined;
 
     if (productData) {
       setProduct(productData);
     }
-  }, []);
+  }, [id]);
 
   if (!product) return null; // Ensure product is loaded before rendering
 
@@ -91,9 +98,6 @@ export const QuikView: React.FC<ProductModalProps> = ({ isOpen, onClose }) => {
             cashOnDelivery={product.cashOnDelivery}
             colors={product.colors}
             sizes={product.sizes}
-            sku={product.sku}
-            tags={product.tags}
-            stock={product.stock}
           />
         </div>
       </div>
