@@ -58,8 +58,6 @@ export const QuikView: React.FC<ProductModalProps> = ({
 }) => {
   const [product, setProduct] = useState<Product | null>(null);
 
-  console.log("Product ID:", id);
-
   useEffect(() => {
     const productData = singleProduct.find((item) => item.id === `${id}`) as
       | Product
