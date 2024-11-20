@@ -40,16 +40,27 @@ export const cartSlice = createSlice({
       );
 
       if (existingItem) {
+        // Update quantity
         existingItem.quantity += action.payload.quantity;
+
+        // Update color and size only if provided
+        if (action.payload.selectedColor) {
+          existingItem.selectedColor = action.payload.selectedColor;
+        }
+        if (action.payload.selectedSize) {
+          existingItem.selectedSize = action.payload.selectedSize;
+        }
       } else {
+        // Add new item to cart
         state.items.push({
           ...action.payload,
           imgSrcDefault:
-            action.payload.imgSrcDefault || "/imgs/default-product.jpg", // Ensure a default image
+            action.payload.imgSrcDefault || "/imgs/default-product.jpg", // Default image
         });
       }
 
-      saveCartToLocalStorage(state); // Save updated state to localStorage
+      // Save updated state to localStorage
+      saveCartToLocalStorage(state);
     },
 
     removeFromCart: (state, action: PayloadAction<number>) => {

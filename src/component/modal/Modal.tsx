@@ -1,32 +1,44 @@
-import React, { ReactNode } from "react";
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: ReactNode;
+interface BootstrapModalProps {
+  isOpen: boolean; // Determines if the modal is open
+  onClose: () => void; // Function to close the modal
+  title?: string; // Modal title
+  children: React.ReactNode; // Modal content
 }
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
-
+const BootstrapModal: React.FC<BootstrapModalProps> = ({
+  isOpen,
+  onClose,
+  title,
+  children,
+}) => {
   return (
     <div
-      className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-      onClick={onClose}
+      className={`modal fade ${isOpen ? "show d-block" : "d-none"}`}
+      tabIndex={-1}
+      role="dialog"
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+      onClick={onClose} // Close when clicking outside the modal
     >
       <div
-        className="modal-dialog bg-white rounded-lg shadow-lg p-6 relative w-full max-w-4xl"
-        onClick={(e) => e.stopPropagation()}
+        className="modal-dialog modal-lg"
+        role="document"
+        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
       >
-        <button
-          className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          &times;
-        </button>
-        {children}
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title">{title}</h5>
+            <button
+              type="button"
+              className="btn-close"
+              aria-label="Close"
+              onClick={onClose} // Close modal on button click
+            ></button>
+          </div>
+          <div className="modal-body">{children}</div>
+        </div>
       </div>
     </div>
   );
 };
+
+export default BootstrapModal;
