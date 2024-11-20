@@ -10,6 +10,8 @@ import singleProduct from "@/../data/singleproduct-details.json";
 interface Product {
   id: number;
   imgSrcDefault: string;
+  mainImages: string[];
+  thumbnails: string[];
   title: string;
   brand: string;
   rating: number;
@@ -34,28 +36,11 @@ interface Params {
 }
 
 // Main images and thumbnails for the ImageGallery component
-const mainImages = [
-  "/imgs/shop/product-16-1.jpg",
-  "/imgs/shop/product-16-2.jpg",
-  "/imgs/shop/product-16-3.jpg",
-  "/imgs/shop/product-16-4.jpg",
-  "/imgs/shop/product-16-5.jpg",
-  "/imgs/shop/product-16-6.jpg",
-  "/imgs/shop/product-16-7.jpg",
-];
-
-const thumbnails = [
-  "/imgs/shop/thumbnail-3.jpg",
-  "/imgs/shop/thumbnail-4.jpg",
-  "/imgs/shop/thumbnail-5.jpg",
-  "/imgs/shop/thumbnail-6.jpg",
-  "/imgs/shop/thumbnail-7.jpg",
-  "/imgs/shop/thumbnail-8.jpg",
-  "/imgs/shop/thumbnail-9.jpg",
-];
 
 const Page: React.FC<{ params: Params }> = ({ params }) => {
   const [product, setProduct] = useState<Product | null>(null);
+
+  console.log({ product });
 
   useEffect(() => {
     const productData = singleProduct.find((item) => item.id === params.id) as
@@ -92,8 +77,8 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     {/* Image slider */}
                     <ImageGallery
-                      mainImages={mainImages}
-                      thumbnails={thumbnails}
+                      mainImages={product.mainImages}
+                      thumbnails={product.thumbnails}
                     />
                   </div>
                   <div className="col-md-6 col-sm-12 col-xs-12">

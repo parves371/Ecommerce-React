@@ -2,6 +2,18 @@
   {
     "id": "1",
     "imgSrcDefault": "/imgs/shop/product-1-1.jpg",
+    "mainImages": [
+      "/imgs/shop/product-16-1.jpg",
+      "/imgs/shop/product-16-2.jpg",
+      "/imgs/shop/product-16-1.jpg",
+      "/imgs/shop/product-16-2.jpg"
+    ],
+    "thumbnails": [
+      "/imgs/shop/product-16-1.jpg",
+      "/imgs/shop/product-16-2.jpg",
+      "/imgs/shop/product-16-1.jpg",
+      "/imgs/shop/product-16-2.jpg"
+    ],
     "title": "Colorful Pattern Shirts",
     "brand": "Bootstrap",
     "rating": 90,
@@ -22,6 +34,24 @@
   {
     "id": "2",
     "imgSrcDefault": "/imgs/shop/product-2-1.jpg",
+    "mainImages": [
+      "/imgs/shop/product-16-1.jpg",
+      "/imgs/shop/product-16-2.jpg",
+      "/imgs/shop/product-16-3.jpg",
+      "/imgs/shop/product-16-4.jpg",
+      "/imgs/shop/product-16-5.jpg",
+      "/imgs/shop/product-16-6.jpg",
+      "/imgs/shop/product-16-7.jpg"
+    ],
+    "thumbnails": [
+      "/imgs/shop/thumbnail-3.jpg",
+      "/imgs/shop/thumbnail-4.jpg",
+      "/imgs/shop/thumbnail-5.jpg",
+      "/imgs/shop/thumbnail-6.jpg",
+      "/imgs/shop/thumbnail-7.jpg",
+      "/imgs/shop/thumbnail-8.jpg",
+      "/imgs/shop/thumbnail-9.jpg"
+    ],
 
     "title": "Colorful Pattern Shirts",
     "brand": "FashionHub",
@@ -124,7 +154,6 @@
     "stock": 10
   },
   {
-
     "id": "7",
     "imgSrcDefault": "/imgs/shop/product-7-1.jpg",
     "title": "Cotton Summer Hat",

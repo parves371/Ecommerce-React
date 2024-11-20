@@ -1,4 +1,3 @@
-// components/ImageGallery.tsx
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import styles from "./ImageGallery.module.css";
@@ -18,7 +17,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   const [selectedImage, setSelectedImage] = useState(mainImages[0]);
 
   const thumbnailSettings = {
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     focusOnSelect: true,
   };
@@ -41,23 +40,43 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
         />
       </div>
 
-      {/* Thumbnail Slider */}
-      <Slider {...thumbnailSettings} className={styles.sliderNavThumbnails}>
-        {thumbnails.map((src, index) => (
-          <div
-            key={index}
-            onClick={() => handleThumbnailClick(mainImages[index])}
-          >
-            <Image
-              width={80}
-              height={80}
-              src={src}
-              alt={`Thumbnail ${index + 1}`}
-              className={styles.thumbnailImage}
-            />
-          </div>
-        ))}
-      </Slider>
+      {/* Conditional rendering for slider or static thumbnails */}
+      {thumbnails.length > 3 && mainImages.length > 3 ? (
+        <Slider {...thumbnailSettings} className={styles.sliderNavThumbnails}>
+          {thumbnails.map((src, index) => (
+            <div
+              key={index}
+              onClick={() => handleThumbnailClick(mainImages[index])}
+            >
+              <Image
+                width={80}
+                height={80}
+                src={src}
+                alt={`Thumbnail ${index + 1}`}
+                className={styles.thumbnailImage}
+              />
+            </div>
+          ))}
+        </Slider>
+      ) : (
+        <div className="flex items-center gap-4">
+          {thumbnails.map((src, index) => (
+            <div
+              key={index}
+              onClick={() => handleThumbnailClick(mainImages[index])}
+              className=""
+            >
+              <Image
+                width={80}
+                height={80}
+                src={src}
+                alt={`Thumbnail ${index + 1}`}
+                className={styles.thumbnailImage}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
